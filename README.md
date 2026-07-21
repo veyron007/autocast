@@ -28,6 +28,15 @@ runs/manifest.json  # append-only history index (the UI reads this) — committe
 GitHub-Actions keep-alive (a scheduled workflow auto-disables after 60 days of no
 commits; committing the manifest each run keeps the cron alive).
 
+## The desk (`docs/`) — one real UI, not the CLI
+
+A static, zero-cost dashboard ("The Cutting Room") reads the committed spine and
+renders every run's nine stages as a **signal chain** you can watch the picture flow
+through. It also **writes**: edit the topic queue and trigger a render/retry — either
+live (with a browser-stored GitHub token) or via a copy + Edit-on-GitHub fallback. No
+server, no committed secret. Enable it under **Settings → Pages → `main` / `/docs`**.
+See [`docs/README.md`](docs/README.md).
+
 ## Stages (in order)
 
 `topic → script → direction → images → tts → assets → video → thumbnail → upload`

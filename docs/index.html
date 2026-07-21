@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-boot="loading">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AutoCast — Cutting Room</title>
+  <meta name="description" content="Operator desk for AutoCast: the autonomous, zero-cost daily faceless-film pipeline. Watch every run flow through nine synchronized stages." />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Fonts: a characterful editorial serif (display) + a technical mono (data).
+       Deliberately NOT a generic system/Inter stack. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://raw.githubusercontent.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Atmosphere: film grain + safelight vignette, purely decorative. -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ─────────────────────────── MASTHEAD ─────────────────────────── -->
+  <header class="masthead" aria-label="AutoCast control desk">
+    <div class="brand">
+      <span class="brand__kicker">◉ AUTONOMOUS FILM DESK</span>
+      <h1 class="brand__mark">AutoCast<span class="brand__cursor">_</span></h1>
+      <p class="brand__sub">One topic in. A voiced 1080p film out. Every day. Nobody at the wheel.</p>
+    </div>
+
+    <div class="bug" role="status" aria-live="polite">
+      <div class="bug__row">
+        <span class="lamp lamp--rec" id="recLamp" hidden></span>
+        <span class="bug__label">CH STATUS</span>
+        <span class="bug__val" id="chStatus">— booting —</span>
+      </div>
+      <div class="bug__row">
+        <span class="bug__label">LAST CUT</span>
+        <span class="bug__val bug__tc" id="lastCut">--:--:--</span>
+      </div>
+      <div class="bug__row">
+        <span class="bug__label">NEXT CRON</span>
+        <span class="bug__val" id="nextCron">06:00 UTC · daily</span>
+      </div>
+      <div class="bug__row bug__row--tools">
+        <span class="src" id="srcDot" title="data source">
+          <span class="lamp lamp--dim" id="srcLamp"></span><span id="srcText">LIVE</span>
+        </span>
+        <button class="tbtn" id="refreshBtn" title="Re-pull committed state">↻ REFRESH</button>
+        <button class="tbtn" id="keyBtn" title="Write access (GitHub token)">⚿ ACCESS</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─────────────────────────── THE REEL ─────────────────────────── -->
+  <section class="reel" aria-label="Render reel">
+    <div class="reel__head">
+      <h2 class="section-title">The Reel</h2>
+      <span class="section-note" id="reelCount">loading runs…</span>
+    </div>
+    <div class="filmstrip" id="filmstrip" role="listbox" aria-label="Runs, newest first">
+      <!-- run frames injected by app.js -->
+      <div class="frame frame--ghost">loading…</div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── MAIN STAGE ────────────────────────── -->
+  <main class="stage">
+    <!-- LEFT: selected run detail -->
+    <section class="detail" id="detail" aria-label="Selected run">
+      <div class="detail__empty" id="detailEmpty">
+        <span class="detail__empty-mark">▦</span>
+        <p>Select a frame from the reel to inspect its spine.</p>
+      </div>
+
+      <article class="run" id="run" hidden>
+        <header class="run__head">
+          <span class="run__date bug__tc" id="runDate"></span>
+          <span class="pill" id="runStatus"></span>
+          <span class="pill pill--ghost" id="runPrivacy"></span>
+        </header>
+        <h3 class="run__title" id="runTitle"></h3>
+        <p class="run__meta" id="runMeta"></p>
+
+        <!-- HERO: the nine-stage signal chain -->
+        <div class="chain-wrap">
+          <div class="chain__label">
+            <span>THE SPINE</span>
+            <span class="chain__hint">signal flows left → right · each stage feeds the next</span>
+          </div>
+          <ol class="chain" id="chain" aria-label="Nine-stage pipeline"></ol>
+        </div>
+
+        <!-- Reel breakdown: shots as a storyboard -->
+        <div class="board" id="boardWrap" hidden>
+          <div class="chain__label"><span>SHOT LIST</span><span class="chain__hint" id="boardHint"></span></div>
+          <div class="board__grid" id="board"></div>
+        </div>
+
+        <!-- Shooting script + publish -->
+        <div class="split">
+          <div class="script" id="scriptWrap" hidden>
+            <div class="chain__label"><span>SHOOTING SCRIPT</span><span class="chain__hint" id="scriptHint"></span></div>
+            <p class="script__body" id="scriptBody"></p>
+          </div>
+          <div class="publish" id="publishWrap" hidden>
+            <div class="chain__label"><span>PUBLISH</span></div>
+            <dl class="kv" id="publishKv"></dl>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- RIGHT: cue sheet (queue) + control -->
+    <aside class="rail" aria-label="Cue sheet and controls">
+      <section class="cue" aria-label="Topic queue">
+        <div class="chain__label">
+          <span>CUE SHEET</span>
+          <span class="chain__hint">next up · the topic stage dequeues from the top</span>
+        </div>
+        <ul class="cue__list" id="cueList" aria-live="polite"></ul>
+        <form class="cue__add" id="cueForm" autocomplete="off">
+          <input class="cue__input" id="cueInput" type="text" maxlength="100"
+                 placeholder="Add a topic title…" aria-label="New topic title" />
+          <button class="cue__addbtn" type="submit" aria-label="Add topic">+</button>
+        </form>
+        <div class="cue__foot">
+          <span class="cue__dirty" id="cueDirty" hidden>● unsaved</span>
+          <button class="btn btn--amber" id="saveQueueBtn">Save cue sheet →</button>
+        </div>
+      </section>
+
+      <section class="control" aria-label="Run controls">
+        <div class="chain__label"><span>CONTROL</span></div>
+        <button class="btn btn--green" id="renderBtn">▶ Render / retry a run</button>
+        <p class="control__note" id="controlNote">
+          Resumes a failed or partial run in CI. A finished run is a no-op.
+        </p>
+        <div class="config" id="configKv"></div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ─────────────────────────── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <span class="footer__badge">ZERO-COST</span>
+    <span>State is version-controlled in
+      <a id="repoLink" href="https://github.com/veyron007/autocast" target="_blank" rel="noopener">veyron007/autocast</a>.
+      Renders in GitHub Actions · reads the committed spine.</span>
+    <span class="footer__disc">All footage &amp; narration are AI-generated.</span>
+  </footer>
+
+  <!-- ─────────────────────── ACCESS / TOKEN MODAL ─────────────────── -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__scrim" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__x" data-close aria-label="Close">✕</button>
+      <h4 id="modalTitle" class="modal__title">Write access</h4>
+      <p class="modal__lede">
+        The desk reads state with no login. To <em>write</em> — save the cue sheet or
+        trigger a render — it needs a GitHub token with <code>contents</code> +
+        <code>actions</code> write on this repo. It is stored <strong>only in this
+        browser</strong> (localStorage), never committed, never sent anywhere but GitHub.
+      </p>
+      <label class="modal__label" for="tokenInput">Fine-grained token</label>
+      <input class="modal__input" id="tokenInput" type="password" placeholder="github_pat_…"
+             autocomplete="off" spellcheck="false" />
+      <div class="modal__actions">
+        <button class="btn btn--ghost" id="clearTokenBtn">Clear</button>
+        <button class="btn btn--amber" id="saveTokenBtn">Save token</button>
+      </div>
+      <p class="modal__foot">
+        No token? Every write falls back to a one-click <strong>Edit on GitHub</strong>
+        deep-link with the exact JSON copied to your clipboard. Still zero-server.
+      </p>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

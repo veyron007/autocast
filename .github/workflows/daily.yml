@@ -10,7 +10,12 @@ name: autocast-daily
 on:
   schedule:
     - cron: "0 6 * * *"   # 06:00 UTC daily (UTC only; may be delayed under load — fine)
-  workflow_dispatch: {}    # manual trigger + optional Cloudflare-cron trigger
+  workflow_dispatch:       # manual trigger (the dashboard "retry / render" button)
+    inputs:
+      run_id:
+        description: "Run id to (re)render, YYYY-MM-DD. Blank = today (UTC)."
+        required: false
+        default: ""
 
 permissions:
   contents: write          # to commit run.json + manifest back (state + keep-alive)
@@ -31,7 +36,14 @@ jobs:
         run: uv sync --frozen --extra media --extra tts || uv sync --extra media
 
       - name: Run pipeline
-        run: uv run python -m autocast.orchestrator --run-id "$(date -u +%F)"
+        # run_id from the manual dispatch input if given, else today (the cron path).
+        # The orchestrator is RESUMABLE: dispatching a failed/partial run re-attempts
+        # its unfinished stages; a fully-completed run is a no-op (all stages skip).
+        run: |
+          RUN_ID="${{ github.event.inputs.run_id }}"
+          [ -z "$RUN_ID" ] && RUN_ID="$(date -u +%F)"
+          echo "rendering run_id=$RUN_ID"
+          uv run python -m autocast.orchestrator --run-id "$RUN_ID"
         env:
           GEMINI_API_KEY:       ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY:         ${{ secrets.GROQ_API_KEY }}
