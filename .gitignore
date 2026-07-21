@@ -1,0 +1,28 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# uv
+# (uv.lock IS committed — reproducible installs)
+
+# Heavy run assets: upload to YouTube, keep only the youtube_video_id in run.json.
+# Committed per-run: run.json, run.log.jsonl, thumb.jpg, and manifest.json.
+runs/*/assets/*.mp4
+runs/*/assets/*.wav
+runs/*/assets/*.mp3
+runs/*/assets/*.png
+runs/*/assets/reel.mp4
+runs/*/assets/final.mp4
+runs/*/assets/concat.txt
+runs/*/assets/words.json
+runs/*/assets/captions.ass
+# keep thumbnails (tiny, the UI wants them):
+!runs/*/assets/thumb.jpg

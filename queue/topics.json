@@ -1,0 +1,4 @@
+{
+  "_comment": "Human-editable topic queue. The topic stage reads this; the future UI writes it. Empty queue -> topic stage falls back to Google Trends RSS / static seeds.",
+  "queued": []
+}

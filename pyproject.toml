@@ -1,0 +1,47 @@
+[project]
+name = "autocast"
+version = "0.1.0"
+description = "Fully automated, zero-cost, daily faceless-YouTube video pipeline."
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Light core: the --dry-run skeleton installs with ONLY these. No FFmpeg/ML deps.
+dependencies = [
+    "pydantic>=2.7",
+    "pydantic-settings>=2.2",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+# Real-render extras — installed in the GitHub Action, not required for dry-run.
+media = [
+    "pillow>=10.0",
+]
+# Light, keyless, cross-platform TTS for CI + local render. edge-tts is a thin
+# websocket client (no torch), so `uv sync --extra tts` stays fast and reliable.
+# The TTS cascade also falls back to the local macOS `say` binary in dev.
+tts = [
+    "edge-tts>=6.1",
+]
+# Heavy, commercial-safe (Apache-2.0) local TTS upgrade path. NOT installed by
+# default — it pulls torch. Wire it once a GPU/slow-CPU render budget exists.
+tts-local = [
+    "kokoro>=0.9",
+    "whisperx>=3.1",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+autocast = "autocast.orchestrator:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["autocast"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
