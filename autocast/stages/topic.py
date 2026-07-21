@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 
 from autocast.config import Config
 from autocast.providers.llm import build_llm_providers, try_llm
+from autocast.seeds import rotated_seed_titles
 from autocast.spine import Run, Topic
 from autocast.util.net import get_text
 
@@ -27,14 +28,8 @@ STAGE = "topic"
 # Google Trends RSS (US daily). Keyless. TODO(real): make geo configurable via cfg.
 _TRENDS_RSS = "https://trends.google.com/trending/rss?geo=US"
 
-# Fallback seed topics for dry-run / offline. Faceless-friendly, evergreen.
-_STATIC_TOPICS = [
-    "Why the Roman Concrete Recipe Was Lost",
-    "The Deep-Sea Creatures That Glow in the Dark",
-    "How Medieval Cities Handled Their Waste",
-    "The Forgotten Language That Vanished in a Generation",
-    "Why Some Ancient Bridges Still Stand Today",
-]
+# Evergreen seed topics live in autocast.seeds (each has a bespoke script + shot
+# list). They rotate by date so a keyless channel ships a different seed daily.
 
 
 def _read_queue(cfg: Config) -> list[str]:
@@ -66,8 +61,11 @@ def _fetch_trends_titles() -> list[str]:
         return []
 
 
-def _select_candidates(cfg: Config, dry_run: bool) -> tuple[list[str], str]:
+def _select_candidates(cfg: Config, run_id: str, dry_run: bool) -> tuple[list[str], str]:
     """Return (candidate signals, source label) by the selection priority.
+
+    Seeds are date-rotated so today's pick is first — a keyless run that falls to
+    `candidates[0]` then lands on a different evergreen topic each day.
 
     Trending terms are raw search phrases (names, products) — not video topics —
     so we append the evergreen seeds as anchors and let the LLM craft a real title.
@@ -75,12 +73,13 @@ def _select_candidates(cfg: Config, dry_run: bool) -> tuple[list[str], str]:
     queued = _read_queue(cfg)
     if queued:
         return queued, "human-queue"
+    seeds = rotated_seed_titles(run_id)
     if dry_run:
-        return list(_STATIC_TOPICS), "static-seed"
+        return seeds, "static-seed"
     trends = _fetch_trends_titles()
     if trends:
-        return trends + _STATIC_TOPICS, "google-trends-rss"
-    return list(_STATIC_TOPICS), "static-seed"
+        return trends + seeds, "google-trends-rss"
+    return seeds, "static-seed"
 
 
 def _craft_prompt(candidates: list[str]) -> str:
@@ -104,7 +103,7 @@ def _clean_title(text: str) -> str:
 
 
 def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
-    candidates, source = _select_candidates(cfg, dry_run)
+    candidates, source = _select_candidates(cfg, spine.run_id, dry_run)
 
     providers = build_llm_providers(
         cfg, prompt=_craft_prompt(candidates), kind="topic-rank", dry_run=dry_run
@@ -116,12 +115,14 @@ def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
         chosen = candidates[0]
     elif llm_text:
         # LLM crafts a real title from the raw signals (names/products aren't topics).
-        chosen = _clean_title(llm_text) or _STATIC_TOPICS[0]
+        # If the LLM returns nothing usable, fall to the day's rotated seed.
+        chosen = _clean_title(llm_text) or rotated_seed_titles(spine.run_id)[0]
     else:
         # LLM is down: a raw trend term ("visa bulletin") won't cohere with the
-        # deterministic template script/shots downstream, but the evergreen seed
-        # WILL — the templates are written around it. Degrade to a coherent whole.
-        chosen = _STATIC_TOPICS[0]
+        # deterministic template script/shots downstream, but the day's evergreen
+        # seed WILL — its bespoke script + shots are written around it. Degrade to
+        # a coherent whole (and rotate, so it's not the same seed every day).
+        chosen = rotated_seed_titles(spine.run_id)[0]
 
     spine.topic = Topic(
         title=chosen,

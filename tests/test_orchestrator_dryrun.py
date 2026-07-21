@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from autocast.config import Config
 from autocast.orchestrator import run_pipeline
+from autocast.seeds import SEED_TITLES
 from autocast.spine import Run, StageStatus
 
 
@@ -18,7 +19,9 @@ def test_dry_run_completes_all_stages(tmp_path):
 
     assert all(rec.status is StageStatus.COMPLETED for rec in spine.stages)
     assert spine.topic is not None
-    assert len(spine.shots) == 3
+    # Dry-run lands on a date-rotated evergreen seed with a bespoke shot list.
+    assert spine.topic.title in SEED_TITLES
+    assert 3 <= len(spine.shots) <= 8
     assert all(s.image_path and s.clip_path for s in spine.shots)
     assert spine.video is not None and spine.video.final_path == "assets/final.mp4"
     assert spine.upload is not None and spine.upload.privacy == "private"

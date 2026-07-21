@@ -17,6 +17,7 @@ import re
 
 from autocast.config import Config
 from autocast.providers.llm import build_llm_providers, try_llm
+from autocast.seeds import TEMPLATE_SEED, generic_shots, seed_for_title
 from autocast.spine import Run, Shot
 
 log = logging.getLogger("autocast.stages.direction")
@@ -27,30 +28,17 @@ _MOTIONS = ("zoom_in", "zoom_out", "pan_left", "pan_right")
 _MIN_SHOTS = 3
 _MAX_SHOTS = 12
 
-# Deterministic 3-shot dry-run shot list. Real, downstream-usable data.
-_DRY_SHOTS = [
-    {
-        "narration": "Two thousand years ago, engineers built structures we still cannot fully explain.",
-        "image_prompt": "ancient roman harbor at golden hour, dramatic light, cinematic, wide shot",
-        "duration_s": 5.5,
-        "motion": "zoom_in",
-        "caption": "It outlasted empires",
-    },
-    {
-        "narration": "The secret was hidden in a recipe that was lost for centuries.",
-        "image_prompt": "close up of weathered ancient stone wall, moody, high detail, cinematic",
-        "duration_s": 5.0,
-        "motion": "pan_right",
-        "caption": "A recipe, lost",
-    },
-    {
-        "narration": "Today, that knowledge is teaching us how to build for the future.",
-        "image_prompt": "modern laboratory with glowing samples, futuristic, clean, cinematic",
-        "duration_s": 5.5,
-        "motion": "zoom_out",
-        "caption": "Rediscovered",
-    },
-]
+
+def _template_shots(title: str) -> tuple[list[dict], str]:
+    """The non-LLM shot list for a topic: its bespoke seed shots (distinct per
+    topic) when the title is a known evergreen seed, else a topic-neutral generic
+    list. Returns (shots, provider_label). Copies dicts so callers never mutate
+    the shared template data."""
+    seed = seed_for_title(title)
+    if seed is not None:
+        return [dict(s) for s in seed.shots], TEMPLATE_SEED
+    # generic_shots() already returns a fresh, title-aware list per call.
+    return list(generic_shots(title)), "template-fallback"
 
 
 def _direction_prompt(script: str) -> str:
@@ -115,6 +103,7 @@ def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
     if spine.script is None:
         raise ValueError("direction stage: spine.script missing (run script first)")
 
+    title = spine.topic.title if spine.topic else ""
     prompt = _direction_prompt(spine.script.full_text)
     providers = build_llm_providers(
         cfg, prompt=prompt, kind="direction", allow_cerebras=False, dry_run=dry_run
@@ -122,15 +111,14 @@ def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
     llm_text, provider = try_llm(providers)
 
     if dry_run or not llm_text:
-        raw_shots = _DRY_SHOTS
+        raw_shots, provider = _template_shots(title)
     else:
         try:
             raw_shots = _coerce_shots(_extract_json_array(llm_text))
             log.info("direction: parsed %d shots from %s", len(raw_shots), provider)
         except Exception as exc:  # noqa: BLE001 - never let the pipeline die on parse
             log.warning("direction: shot-list parse failed (%s); using template shots", exc)
-            raw_shots = _DRY_SHOTS
-            provider = "template-fallback"
+            raw_shots, provider = _template_shots(title)
 
     spine.shots = [
         Shot(

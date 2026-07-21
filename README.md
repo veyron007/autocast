@@ -110,9 +110,13 @@ Pillow thumbnail. Upload is skipped unless the YouTube secrets are set. Output:
 
 ## Add real content with ONE free key
 
-With **no keys**, `topic`/`script`/`direction` fall back to built-in templates, so
-every video reads the same. Add **any one** free, no-credit-card key to make the
-content dynamic — no code change needed:
+With **no keys**, `topic`/`script`/`direction` fall back to built-in templates.
+Those templates are no longer identical: the channel rotates through a set of
+hand-authored evergreen seed videos (each with its own script, shot list, image
+prompts, and captions) picked by date — so a fully keyless channel still ships a
+different, coherent video every day (see `autocast/seeds.py`). Add **any one**
+free, no-credit-card key to go fully dynamic (any topic, freshly written) — no
+code change needed:
 
 | Provider | Free tier | Env var |
 |----------|-----------|---------|

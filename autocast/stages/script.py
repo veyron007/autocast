@@ -11,6 +11,7 @@ import logging
 
 from autocast.config import Config
 from autocast.providers.llm import build_llm_providers, try_llm
+from autocast.seeds import TEMPLATE_SEED, generic_script, seed_for_title
 from autocast.spine import Run, Script
 
 log = logging.getLogger("autocast.stages.script")
@@ -21,18 +22,6 @@ STAGE = "script"
 # guardrail against a runaway LLM, not a hard truncation.
 _MIN_WORDS = 60
 _MAX_WORDS = 320
-
-
-def _dry_script(title: str) -> str:
-    """Deterministic 3-beat placeholder narration (mirrors the 3-shot shot list)."""
-    return (
-        f"{title}. "
-        "Two thousand years of history hide a simple secret that engineers only "
-        "recently understood. "
-        "In this short film we trace how it began, why it mattered, and what it "
-        "still teaches us today. "
-        "By the end, you will never look at this the same way again."
-    )
 
 
 def _script_prompt(title: str, target_len_s: int) -> str:
@@ -76,13 +65,22 @@ def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
     llm_text, provider = try_llm(providers)
 
     if dry_run or not llm_text:
-        text = _dry_script(title)
+        # No live LLM: prefer the topic's bespoke seed narration (distinct per
+        # topic) over the generic placeholder, so keyless days aren't identical.
+        # The generic fallback shares its narration with the direction stage's
+        # generic shots, so script<->shots stay coherent for non-seed titles too.
+        seed = seed_for_title(title)
+        if seed is not None:
+            text = seed.script
+            provider = TEMPLATE_SEED
+        else:
+            text = generic_script(title)
     else:
         text = _clean_script(llm_text)
         wc = len(text.split())
         if wc < _MIN_WORDS:
             log.warning("script: LLM output too short (%d words); using template", wc)
-            text = _dry_script(title)
+            text = generic_script(title)
         elif wc > _MAX_WORDS:
             text = " ".join(text.split()[:_MAX_WORDS])
 
