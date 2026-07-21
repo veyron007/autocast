@@ -32,12 +32,39 @@
   const bytes = (b) => b == null ? "—" : b > 1e6 ? `${(b/1e6).toFixed(1)} MB` : `${Math.round(b/1e3)} KB`;
   const b64 = (str) => btoa(unescape(encodeURIComponent(str)));
 
+  // Per-stage wall time (ms) from the two ISO stamps the spine persists.
+  // Mirrors StageRecord.duration_ms in spine.py: clamp ≥0 so a resume skew
+  // can't draw a negative bar, and stay null until the stage has both stamps.
+  const durMs = (s) => {
+    if (!s || !s.started_at || !s.ended_at) return null;
+    const a = Date.parse(s.started_at), b = Date.parse(s.ended_at);
+    if (isNaN(a) || isNaN(b)) return null;
+    return Math.max(0, Math.round(b - a));
+  };
+  const fmtDur = (ms) => {
+    if (ms == null) return "—";
+    if (ms < 1000) return `${ms}ms`;
+    const s = ms / 1000;
+    if (s < 60) return `${s.toFixed(s < 10 ? 1 : 0)}s`;
+    const m = Math.floor(s / 60);
+    return `${m}m ${String(Math.round(s % 60)).padStart(2, "0")}s`;
+  };
+  const stageLamp = (st) => st === "completed" ? "lamp--green"
+    : st === "running" ? "lamp--amber" : st === "failed" ? "lamp--red" : "lamp--dim";
+  // log-line helpers
+  const logTime = (ts) => { const m = String(ts || "").match(/T(\d{2}:\d{2}:\d{2})/); return m ? m[1] : "--:--:--"; };
+  const lvlShort = (l) => l === "WARNING" ? "WARN" : l === "CRITICAL" ? "CRIT" : l;
+  const shortLogger = (lg) => { if (!lg) return ""; const p = String(lg).split("."); return p[p.length - 1]; };
+  const oneLine = (m) => String(m ?? "").replace(/\s+/g, " ").trim();
+
   // ── state ─────────────────────────────────────────────────────────────
   let DATA_BASE = null;         // set to RAW or ".." on first successful fetch
   let manifest = [];            // [{run_id,title,status,...}] newest-first
   let selectedId = null;
   let queueDoc = { _comment: "", queued: [] };  // preserve _comment on save
   let queueDirty = false;
+  let logLines = [];            // parsed run.log.jsonl for the selected run
+  let logShowAll = false;       // signal-log filter: false = warnings/errors only
 
   const token = () => localStorage.getItem(TOKEN_KEY) || "";
   const ghHeaders = () => ({
@@ -64,6 +91,23 @@
     throw lastErr || new Error(`could not load ${rel}`);
   }
   const assetURL = (runId, rel) => `${DATA_BASE || RAW}/runs/${runId}/${rel}`;
+
+  // Same base-resolution as fetchJSON but returns raw text — the run log is
+  // JSONL (one object per line), not a JSON array, so we parse it ourselves.
+  async function fetchText(rel) {
+    const bases = DATA_BASE ? [DATA_BASE, RAW, ".."].filter((b, i, a) => a.indexOf(b) === i)
+                            : [RAW, ".."];
+    let lastErr;
+    for (const base of bases) {
+      try {
+        const bust = base.startsWith("http") ? `?t=${Date.now()}` : "";
+        const r = await fetch(`${base}/${rel}${bust}`, { cache: "no-store" });
+        if (r.ok) { DATA_BASE = base; return r.text(); }
+        lastErr = new Error(`${r.status} on ${rel}`);
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error(`could not load ${rel}`);
+  }
 
   // ── toast ─────────────────────────────────────────────────────────────
   let toastT;
@@ -201,6 +245,8 @@
       (wc ? ` · ${wc} words` : "");
 
     renderChain(run.stages || []);
+    renderTimeline(run.stages || []);
+    renderLog(runId);
     renderBoard(run.shots || []);
     renderScript(run.script || {});
     renderPublish(run);
@@ -233,6 +279,102 @@
         `<span class="node__prov" title="${esc(s.error || prov)}">${esc(prov)}</span>`;
       chain.appendChild(li);
     });
+  }
+
+  // ── THE TIMELINE: per-stage wall time as an edit-track of duration bars ─
+  function renderTimeline(stages) {
+    const wrap = $("timelineWrap"), tl = $("timeline"), foot = $("timelineFoot");
+    if (!stages.length) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    tl.innerHTML = "";
+
+    const byName = Object.fromEntries(stages.map((s) => [s.name, s]));
+    const rows = STAGE_ORDER.map((name) => {
+      const s = byName[name] || { name, status: "pending", provider_used: null };
+      return { s, ms: durMs(s) };
+    });
+    const maxMs = Math.max(1, ...rows.map((r) => r.ms || 0));
+    let slowMs = -1, slowName = null;
+    rows.forEach((r) => { if (r.ms != null && r.ms > slowMs) { slowMs = r.ms; slowName = r.s.name; } });
+
+    rows.forEach((r, i) => {
+      const s = r.s, st = s.status || "pending";
+      const li = el("li", "tl-row");
+      li.style.setProperty("--i", i);
+      li.dataset.status = st;
+      if (r.ms != null && s.name === slowName && slowMs > 0) li.dataset.slow = "1";
+      const w = r.ms != null ? Math.max(4, Math.round((r.ms / maxMs) * 100)) : 0;
+      const prov = s.provider_used
+        || (st === "skipped" ? "skipped" : st === "failed" ? "error" : st === "pending" ? "queued" : "—");
+      const att = (s.attempts && s.attempts > 1)
+        ? `<span class="tl-att" title="${s.attempts} attempts">×${s.attempts}</span>` : "";
+      li.innerHTML =
+        `<span class="tl-row__name"><span class="lamp ${stageLamp(st)}"></span><b>${esc(s.name)}</b>${att}</span>` +
+        `<span class="tl-track"><span class="tl-clip" style="--w:${w}%">` +
+          `<span class="tl-clip__prov">${esc(prov)}</span></span></span>` +
+        `<span class="tl-row__dur">${esc(fmtDur(r.ms))}</span>`;
+      if (st === "failed" && s.error) {
+        const e = el("p", "tl-row__err");
+        e.innerHTML = `<b>WHY</b>${esc(s.error)}`;
+        li.appendChild(e);
+      }
+      tl.appendChild(li);
+    });
+
+    const total = rows.reduce((a, r) => a + (r.ms || 0), 0);
+    const timed = rows.filter((r) => r.ms != null).length;
+    foot.innerHTML =
+      `<span>compute time <b>${esc(fmtDur(total))}</b></span>` +
+      (slowName ? `<span>slowest cut <b class="v--amber">${esc(slowName)} · ${esc(fmtDur(slowMs))}</b></span>` : "") +
+      `<span><b>${timed}</b>/${STAGE_ORDER.length} stages timed</span>`;
+  }
+
+  // ── SIGNAL LOG: the run's own JSONL, filtered to what explains a red wire ─
+  async function renderLog(runId) {
+    const wrap = $("logWrap"), body = $("logBody");
+    wrap.hidden = false;
+    logShowAll = false;
+    const tog = $("logToggle");
+    tog.setAttribute("aria-pressed", "false"); tog.textContent = "show all lines";
+    body.innerHTML = `<li class="log__empty">reading signal log…</li>`;
+
+    let text;
+    try { text = await fetchText(`runs/${runId}/run.log.jsonl`); }
+    catch {
+      if (selectedId !== runId) return;
+      logLines = [];
+      body.innerHTML = `<li class="log__empty">No signal log committed for this run.</li>`;
+      $("logHint").textContent = "no log on file";
+      return;
+    }
+    if (selectedId !== runId) return;  // a newer selection won the race
+    logLines = text.split("\n").map((l) => l.trim()).filter(Boolean).map((l) => {
+      try { return JSON.parse(l); } catch { return { ts: "", level: "INFO", logger: "", msg: l }; }
+    });
+    paintLog();
+  }
+
+  function paintLog() {
+    const body = $("logBody"), hint = $("logHint");
+    const isWarn = (x) => x.level === "WARNING" || x.level === "ERROR" || x.level === "CRITICAL";
+    const warnErr = logLines.filter(isWarn);
+    const shown = logShowAll ? logLines : (warnErr.length ? warnErr : logLines.slice(-12));
+    const view = shown.slice(-250);  // cap DOM for a long log
+    hint.textContent = logShowAll
+      ? `${logLines.length} line${logLines.length === 1 ? "" : "s"}`
+      : (warnErr.length
+          ? `${warnErr.length} warning${warnErr.length === 1 ? "" : "s"}/error${warnErr.length === 1 ? "" : "s"} · ${logLines.length} total`
+          : `clean run · last ${view.length} of ${logLines.length} lines`);
+    if (!view.length) { body.innerHTML = `<li class="log__empty">Log is empty.</li>`; return; }
+    body.innerHTML = view.map((x) => {
+      const lvl = x.level || "INFO";
+      const src = shortLogger(x.logger);
+      return `<li class="log-line" data-lvl="${esc(lvl)}">` +
+        `<span class="log-line__t">${esc(logTime(x.ts))}</span>` +
+        `<span class="log-line__lvl">${esc(lvlShort(lvl))}</span>` +
+        `<span class="log-line__msg">${src ? `<span class="log-line__src">${esc(src)}</span> ` : ""}${esc(oneLine(x.msg))}</span>` +
+      `</li>`;
+    }).join("");
   }
 
   // ── storyboard (shots) ─────────────────────────────────────────────────
@@ -441,6 +583,13 @@
     $("cueForm").addEventListener("submit", addCue);
     $("saveQueueBtn").addEventListener("click", saveQueue);
     $("renderBtn").addEventListener("click", dispatchRender);
+    $("logToggle").addEventListener("click", () => {
+      logShowAll = !logShowAll;
+      const b = $("logToggle");
+      b.setAttribute("aria-pressed", String(logShowAll));
+      b.textContent = logShowAll ? "warnings only" : "show all lines";
+      paintLog();
+    });
     $("saveTokenBtn").addEventListener("click", saveToken);
     $("clearTokenBtn").addEventListener("click", clearToken);
     document.querySelectorAll("[data-close]").forEach((n) => n.addEventListener("click", closeModal));

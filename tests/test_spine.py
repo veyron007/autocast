@@ -58,3 +58,52 @@ def test_unknown_stage_raises():
     run = Run.new("2026-07-21")
     with pytest.raises(KeyError):
         run.stage("does-not-exist")
+
+
+def test_stage_duration_ms_none_until_timed():
+    """A pending/running stage has no duration yet — the timeline shows a dash,
+    not a zero bar."""
+    run = Run.new("2026-07-21")
+    assert run.stage("topic").duration_ms is None
+    run.mark_running("topic")  # sets started_at only
+    assert run.stage("topic").duration_ms is None
+
+
+def test_stage_duration_ms_computed_from_timestamps():
+    run = Run.new("2026-07-21")
+    rec = run.stage("topic")
+    rec.started_at = "2026-07-21T14:11:22.000000+00:00"
+    rec.ended_at = "2026-07-21T14:11:25.500000+00:00"
+    assert rec.duration_ms == 3500
+
+
+def test_stage_duration_ms_clamped_non_negative():
+    """A clock skew across a resume must never render a negative bar."""
+    run = Run.new("2026-07-21")
+    rec = run.stage("upload")
+    rec.started_at = "2026-07-21T14:11:25+00:00"
+    rec.ended_at = "2026-07-21T14:11:22+00:00"  # ended before started
+    assert rec.duration_ms == 0
+
+
+def test_stage_duration_survives_roundtrip(tmp_path):
+    """duration_ms is derived from persisted timestamps, so a saved+loaded run
+    reports the exact same timing — the guard behind the timeline panel."""
+    run = Run.new("2026-07-21")
+    run.mark_running("topic")
+    run.stage("topic").started_at = "2026-07-21T14:11:22+00:00"
+    run.stage("topic").ended_at = "2026-07-21T14:11:24+00:00"
+    path = tmp_path / "run.json"
+    run.save(path)
+    loaded = Run.load(path)
+    assert loaded.stage("topic").duration_ms == 2000
+
+
+def test_total_stage_ms_sums_only_timed_stages():
+    run = Run.new("2026-07-21")
+    run.stage("topic").started_at = "2026-07-21T14:11:00+00:00"
+    run.stage("topic").ended_at = "2026-07-21T14:11:03+00:00"  # 3000ms
+    run.stage("script").started_at = "2026-07-21T14:11:03+00:00"
+    run.stage("script").ended_at = "2026-07-21T14:11:04+00:00"  # 1000ms
+    # remaining seven stages have no timing -> contribute 0
+    assert run.total_stage_ms() == 4000

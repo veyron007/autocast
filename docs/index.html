@@ -96,6 +96,26 @@
           <ol class="chain" id="chain" aria-label="Nine-stage pipeline"></ol>
         </div>
 
+        <!-- THE TIMELINE: per-stage wall time — where the signal chain spent its life -->
+        <div class="tl-wrap" id="timelineWrap" hidden>
+          <div class="chain__label">
+            <span>The Timeline</span>
+            <span class="chain__hint">per-stage wall time · the widest bar is the slowest cut</span>
+          </div>
+          <ol class="tl" id="timeline" aria-label="Per-stage render timing"></ol>
+          <p class="tl__foot" id="timelineFoot"></p>
+        </div>
+
+        <!-- SIGNAL LOG: the run's own log — why a wire went red, in its own words -->
+        <div class="log-wrap" id="logWrap" hidden>
+          <div class="chain__label">
+            <span>Signal Log</span>
+            <span class="chain__hint" id="logHint">warnings &amp; errors from this run</span>
+            <button class="log__toggle" id="logToggle" type="button" aria-pressed="false">show all lines</button>
+          </div>
+          <ol class="log" id="logBody" aria-live="polite"></ol>
+        </div>
+
         <!-- Reel breakdown: shots as a storyboard -->
         <div class="board" id="boardWrap" hidden>
           <div class="chain__label"><span>SHOT LIST</span><span class="chain__hint" id="boardHint"></span></div>

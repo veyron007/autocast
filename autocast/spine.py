@@ -64,7 +64,7 @@ class _Model(BaseModel):
 
 
 class StageRecord(_Model):
-    """Per-stage status row. Drives resumability + the future UI."""
+    """Per-stage status row. Drives resumability + the operator UI."""
 
     name: str
     status: StageStatus = StageStatus.PENDING
@@ -73,6 +73,22 @@ class StageRecord(_Model):
     error: str | None = None
     started_at: str | None = None
     ended_at: str | None = None
+
+    @property
+    def duration_ms(self) -> int | None:
+        """Wall time this stage took, in milliseconds — or None until both
+        timestamps exist.
+
+        Derived from `started_at`/`ended_at`, never stored: a computed view can
+        never drift from the timestamps and never has to be re-persisted, so it
+        works on every historical run.json without a re-render. Clamped at 0 so a
+        clock skew across a resume can't produce a negative bar in the UI.
+        """
+        if not self.started_at or not self.ended_at:
+            return None
+        start = datetime.fromisoformat(self.started_at)
+        end = datetime.fromisoformat(self.ended_at)
+        return max(0, round((end - start).total_seconds() * 1000.0))
 
 
 class Topic(_Model):
@@ -202,6 +218,11 @@ class Run(_Model):
     def provider_used_map(self) -> dict[str, str | None]:
         """Per-stage provider_used map."""
         return {rec.name: rec.provider_used for rec in self.stages}
+
+    def total_stage_ms(self) -> int:
+        """Sum of per-stage wall times (ms). Idle gaps between a crash and a
+        later resume are excluded — this is compute time, not elapsed time."""
+        return sum(rec.duration_ms or 0 for rec in self.stages)
 
     def mark_running(self, name: str) -> None:
         rec = self.stage(name)
