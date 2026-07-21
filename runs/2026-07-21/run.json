@@ -173,10 +173,10 @@
       "name": "upload",
       "status": "skipped",
       "provider_used": null,
-      "attempts": 1,
+      "attempts": 2,
       "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
-      "started_at": "2026-07-21T14:12:27.158526+00:00",
-      "ended_at": "2026-07-21T14:12:27.158962+00:00"
+      "started_at": "2026-07-21T14:32:59.102467+00:00",
+      "ended_at": "2026-07-21T14:32:59.102879+00:00"
     }
   ]
 }

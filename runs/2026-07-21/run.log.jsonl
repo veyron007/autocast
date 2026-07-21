@@ -67,3 +67,15 @@
 {"ts": "2026-07-21T14:12:27.158456+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage thumbnail: completed"}
 {"ts": "2026-07-21T14:12:27.159340+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage upload: skipped -> no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate."}
 {"ts": "2026-07-21T14:12:27.159616+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=completed assets=completed video=completed thumbnail=completed upload=skipped ==="}
+{"ts": "2026-07-21T14:32:59.100712+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== AutoCast run 2026-07-21 (dry_run=False) ==="}
+{"ts": "2026-07-21T14:32:59.100945+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "orchestrator: resuming existing run 2026-07-21"}
+{"ts": "2026-07-21T14:32:59.101782+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage topic: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.101924+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage script: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102014+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage direction: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102093+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage images: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102174+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage tts: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102250+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage assets: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102321+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage video: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.102389+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage thumbnail: already completed -> skip"}
+{"ts": "2026-07-21T14:32:59.103282+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage upload: skipped -> no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate."}
+{"ts": "2026-07-21T14:32:59.103634+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=completed assets=completed video=completed thumbnail=completed upload=skipped ==="}
