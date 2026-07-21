@@ -29,9 +29,10 @@ _SHOT_KEYS = {"narration", "image_prompt", "motion", "caption", "duration_s"}
 # ---- seed data integrity ----
 
 def test_seed_titles_unique():
-    # Cycle 11 doubled the keyless rotation 5 -> 10; guard against regressions
-    # that would silently shrink the channel's pre-repeat runway back down.
-    assert len(SEED_TITLES) == len(set(SEED_TITLES)) >= 10
+    # Cycle 11 doubled the keyless rotation 5 -> 10; Cycle 13 grew it 10 -> 15.
+    # Guard against regressions that would silently shrink the channel's
+    # pre-repeat runway back down.
+    assert len(SEED_TITLES) == len(set(SEED_TITLES)) >= 15
 
 
 def test_every_seed_shot_is_wellformed():
@@ -42,6 +43,14 @@ def test_every_seed_shot_is_wellformed():
             assert shot["motion"] in _MOTIONS
             assert shot["narration"].strip() and shot["image_prompt"].strip()
             assert float(shot["duration_s"]) > 0
+
+
+def test_every_caption_is_five_words_or_fewer():
+    # Captions burn onto the video as ≤5-word beats — a long one overflows the
+    # lower third. Lock the constraint so a future seed can't quietly break it.
+    for seed in SEEDS:
+        for shot in seed.shots:
+            assert 1 <= len(shot["caption"].split()) <= 5, seed.title
 
 
 def test_seed_script_reconstructs_shot_narrations():

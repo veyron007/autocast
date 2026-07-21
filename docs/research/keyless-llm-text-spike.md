@@ -76,6 +76,10 @@ ceiling** instead: the evergreen **seed rotation expanded from 5 → 10** bespok
 hand-authored, coherent videos (`autocast/seeds.py`). A keyless channel now ships
 **10 distinct days** of content before any repeat (was 5), with the same
 script↔shot-list coherence invariant enforced by `tests/test_seeds.py`.
+Cycle 13 grew the rotation again, **10 → 15** bespoke seeds (ancient revived
+seeds, the world's largest fungus, Tambora's "year without a summer", shape-
+memory metal, and birds that sleep in flight), so a keyless channel now runs
+**15 distinct days** before any repeat.
 
 ## What would flip this to GO (human levers, unchanged)
 

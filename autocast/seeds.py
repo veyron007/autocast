@@ -387,6 +387,171 @@ SEEDS: tuple[Seed, ...] = (
             },
         ),
     ),
+    Seed(
+        title="The Ancient Seeds That Grew After 2,000 Years",
+        shots=(
+            {
+                "narration": "High on a desert cliff in Israel, archaeologists sifting through an ancient fortress found a handful of date palm seeds, buried and forgotten for two thousand years. By every rule of biology, they should have been long dead.",
+                "image_prompt": "sun-scorched desert fortress ruins on a high cliff above a pale valley, golden light, archaeological dig, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "Seeds from a lost fortress",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Decades later, a researcher decided to try the impossible and simply planted them. She soaked the shriveled seeds, gave them water and warmth, and waited for something everyone expected would never come.",
+                "image_prompt": "extreme close up of three ancient shriveled date seeds resting in dark soil under warm light, high detail, hopeful, cinematic macro",
+                "motion": "pan_right",
+                "caption": "Planting the impossible",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "Then, against two thousand years of odds, a single green shoot pushed up through the soil. The ancient seed had awakened, and they named the little palm Methuselah, after the oldest man in legend.",
+                "image_prompt": "a tiny green palm sprout emerging from dark earth in a shaft of warm sunlight, tender new leaves, luminous, cinematic close up",
+                "motion": "zoom_in",
+                "caption": "It woke up",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Today that palm stands tall, grown from a seed older than most of recorded history. It is living proof that life can wait, patient and dormant, for millennia, ready to begin again.",
+                "image_prompt": "a tall healthy date palm standing alone against a vast desert sky at golden hour, majestic, warm, cinematic wide shot",
+                "motion": "zoom_out",
+                "caption": "Life can wait",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Largest Living Thing Is a Single Fungus",
+        shots=(
+            {
+                "narration": "In a quiet forest in Oregon, trees were dying in slow, spreading rings, and no one knew why. When scientists dug beneath the soil to investigate, they uncovered the largest living organism on Earth.",
+                "image_prompt": "dense oregon pine forest with patches of dying trees seen from above, misty, muted green, eerie, cinematic aerial",
+                "motion": "zoom_in",
+                "caption": "Trees dying in rings",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "It was a single honey fungus, hidden almost entirely underground. A vast web of pale threads laced through the soil, all part of one connected organism spreading silently between the roots of the trees.",
+                "image_prompt": "macro of pale white fungal threads threading through dark forest soil and tree roots, intricate, glistening, cinematic detail",
+                "motion": "pan_left",
+                "caption": "One hidden organism",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "This one fungus sprawls across nearly ten square kilometers, weighs as much as thousands of cars, and may be over two thousand years old. Almost all of it stays invisible, deep beneath the forest floor.",
+                "image_prompt": "clusters of golden honey mushrooms growing at the base of a mossy tree trunk in dim forest light, richly detailed, cinematic",
+                "motion": "zoom_in",
+                "caption": "Bigger than a city",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "We picture giants as whales or towering trees. But the true colossus of the living world is a quiet, patient fungus, hiding under a forest that has no idea it is standing on a single vast creature.",
+                "image_prompt": "sunlight breaking through a tall silent forest canopy onto the shadowed floor below, atmospheric, expansive, cinematic",
+                "motion": "zoom_out",
+                "caption": "The true giant",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Volcano That Stole a Summer",
+        shots=(
+            {
+                "narration": "In 1815, a mountain in Indonesia named Tambora erupted with the most violent blast in recorded history. It hurled so much ash into the sky that the effects would soon be felt on the far side of the world.",
+                "image_prompt": "colossal volcanic eruption at dusk hurling ash and fire into a darkening sky over a tropical island, apocalyptic, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "1815, Mount Tambora",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "A veil of fine ash and gas spread high through the atmosphere, circling the globe and dimming the sun itself. Slowly, quietly, it began to cool the entire planet by a fraction of a degree.",
+                "image_prompt": "hazy pale sun struggling through a thick veil of high atmospheric ash, muted grey sky, ominous, cinematic",
+                "motion": "pan_right",
+                "caption": "A veil over the sun",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "The next year, 1816, became the year without a summer. Snow fell in June across New England, frost killed crops in Europe, harvests failed, and hunger spread through countries that never felt the eruption at all.",
+                "image_prompt": "a failing summer crop field dusted with unseasonable frost under a cold grey sky, bleak, desolate, cinematic",
+                "motion": "zoom_in",
+                "caption": "A summer that never came",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Trapped indoors by the endless gloom, a young writer named Mary Shelley began a ghost story that became Frankenstein. A single volcano had chilled the world, starved nations, and quietly reshaped its art.",
+                "image_prompt": "candlelit writing desk with an open notebook and quill by a rain-streaked window at night, moody, intimate, cinematic",
+                "motion": "zoom_out",
+                "caption": "One volcano, a new world",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Metal That Remembers Its Shape",
+        shots=(
+            {
+                "narration": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged.",
+                "image_prompt": "a thin silver metal wire bent into a tangle resting on a clean dark surface under soft studio light, high detail, cinematic macro",
+                "motion": "zoom_in",
+                "caption": "Metal that remembers",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure the atoms hold two arrangements, and a little heat snaps them back from the bent shape to the one they were trained to keep.",
+                "image_prompt": "abstract glowing crystalline lattice of atoms rearranging, blue and silver, scientific visualization, luminous, cinematic",
+                "motion": "pan_left",
+                "caption": "A trained crystal",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "This strange memory does real work. Nitinol springs open blocked arteries from inside the body, flexes eyeglass frames back into shape, and even folds up satellites that unfurl once they reach the cold of space.",
+                "image_prompt": "close up of a delicate mesh medical stent expanding, precise metallic filaments, clinical blue light, cinematic detail",
+                "motion": "zoom_in",
+                "caption": "Memory that saves lives",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "We think of memory as something only minds possess. But locked inside the right metal is a kind of memory too, a shape it will always find its way back to, no matter how far you bend it.",
+                "image_prompt": "a straightened silver wire glinting on a dark reflective surface with soft rim light, elegant, minimal, cinematic",
+                "motion": "zoom_out",
+                "caption": "Shape it never forgets",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Birds That Sleep While They Fly",
+        shots=(
+            {
+                "narration": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep?",
+                "image_prompt": "a lone seabird gliding high over an endless open ocean at golden hour, tiny against vast sky, serene, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "Weeks without landing",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The recordings revealed something remarkable: the birds really do sleep, in the air, while still soaring on the wind.",
+                "image_prompt": "great frigatebird with a wide black wingspan soaring against a dramatic cloud-streaked sky, majestic, cinematic",
+                "motion": "pan_right",
+                "caption": "Sleeping on the wing",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "They sleep in tiny bursts of just seconds, often resting only half the brain at a time while the other half stays alert. Sometimes, riding a rising current, they even shut down both halves at once.",
+                "image_prompt": "close up of a frigatebird's eye and head in soft focus against a blurred bright sky, intimate, detailed, cinematic",
+                "motion": "zoom_in",
+                "caption": "Half a brain awake",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "In a whole month at sea, they sleep barely forty minutes a day, a fraction of what they take on land. High above the waves, these birds have quietly mastered a trick that still leaves scientists amazed.",
+                "image_prompt": "silhouetted seabird drifting across a vast twilight sky above a calm ocean, peaceful, expansive, cinematic",
+                "motion": "zoom_out",
+                "caption": "Masters of the sky",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
 )
 
 # Titles in seed order — the topic stage's evergreen seed list.
