@@ -1,0 +1,182 @@
+{
+  "run_id": "2026-07-21",
+  "schema_version": 1,
+  "created_at": "2026-07-21T14:11:22.102551+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Why the Roman Concrete Recipe Was Lost",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Why the Roman Concrete Recipe Was Lost. Two thousand years of history hide a simple secret that engineers only recently understood. In this short film we trace how it began, why it mattered, and what it still teaches us today. By the end, you will never look at this the same way again.",
+    "word_count": 53,
+    "provider": "template-fallback"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Two thousand years ago, engineers built structures we still cannot fully explain.",
+      "image_prompt": "ancient roman harbor at golden hour, dramatic light, cinematic, wide shot",
+      "duration_s": 5.754,
+      "motion": "zoom_in",
+      "caption": "It outlasted empires",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 5.754
+    },
+    {
+      "idx": 1,
+      "narration": "The secret was hidden in a recipe that was lost for centuries.",
+      "image_prompt": "close up of weathered ancient stone wall, moody, high detail, cinematic",
+      "duration_s": 4.266,
+      "motion": "pan_right",
+      "caption": "A recipe, lost",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 5.754,
+      "audio_end_s": 10.02
+    },
+    {
+      "idx": 2,
+      "narration": "Today, that knowledge is teaching us how to build for the future.",
+      "image_prompt": "modern laboratory with glowing samples, futuristic, clean, cinematic",
+      "duration_s": 4.266,
+      "motion": "zoom_out",
+      "caption": "Rediscovered",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 10.02,
+      "audio_end_s": 14.286
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 14.286,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": null,
+    "music_source": null,
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": []
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 14.286,
+    "size_bytes": 2422431
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "Why the Roman Concrete Recipe Was Lost",
+    "description": "Why the Roman Concrete Recipe Was Lost. Two thousand years of history hide a simple secret that engineers only recently understood. In this short film we trace how it began, why it mattered, and what it still teaches us today. By the end, you will never look at this the same way \n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "roman",
+      "concrete",
+      "recipe",
+      "lost"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:22.102898+00:00",
+      "ended_at": "2026-07-21T14:11:25.986293+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:25.986822+00:00",
+      "ended_at": "2026-07-21T14:11:46.054674+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:46.055259+00:00",
+      "ended_at": "2026-07-21T14:11:47.139974+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:47.140559+00:00",
+      "ended_at": "2026-07-21T14:11:48.302419+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:48.302963+00:00",
+      "ended_at": "2026-07-21T14:11:58.344523+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:58.345251+00:00",
+      "ended_at": "2026-07-21T14:11:58.346101+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:11:58.346573+00:00",
+      "ended_at": "2026-07-21T14:12:27.042616+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-21T14:12:27.043364+00:00",
+      "ended_at": "2026-07-21T14:12:27.157946+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-07-21T14:12:27.158526+00:00",
+      "ended_at": "2026-07-21T14:12:27.158962+00:00"
+    }
+  ]
+}
