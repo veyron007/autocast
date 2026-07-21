@@ -222,6 +222,171 @@ SEEDS: tuple[Seed, ...] = (
             },
         ),
     ),
+    Seed(
+        title="The Library of Alexandria Didn't Burn in a Day",
+        shots=(
+            {
+                "narration": "You have heard that the great Library of Alexandria burned in a single catastrophic night, taking all the world's knowledge with it. The truth is stranger, and far quieter.",
+                "image_prompt": "grand ancient library of alexandria interior, towering shelves of papyrus scrolls, warm torchlight, marble columns, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "The great fire myth",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "There was no single fire. Caesar's troops scorched part of it once, but the real decline was slow: decades of lost funding, expelled scholars, and fragile scrolls crumbling to dust in the damp sea air.",
+                "image_prompt": "decaying papyrus scrolls crumbling on dusty neglected shelves in dim shafts of light, melancholic, high detail, cinematic",
+                "motion": "pan_right",
+                "caption": "A slow decline",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Every scroll had to be copied by hand just to survive. When the scholars stopped coming and the copyists laid down their pens, the words did not burn. They were simply never recopied, and faded away.",
+                "image_prompt": "close up of an ancient scribe's hands copying greek text onto papyrus with a reed pen by candlelight, warm, intimate, cinematic",
+                "motion": "zoom_in",
+                "caption": "Copied by hand, or lost",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "We mourn a single dramatic blaze, but knowledge more often dies of neglect. The lesson of Alexandria is not to fear the fire. It is to fear forgetting to care.",
+                "image_prompt": "a single candle burning low beside a fading scroll in surrounding darkness, symbolic, moody, cinematic still life",
+                "motion": "zoom_out",
+                "caption": "Neglect, not flame",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="Why Honey Is the Only Food That Never Spoils",
+        shots=(
+            {
+                "narration": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How?",
+                "image_prompt": "ancient sealed ceramic jar of golden honey inside an egyptian tomb lit by a single torch, dramatic, high detail, cinematic",
+                "motion": "zoom_in",
+                "caption": "3,000 years old, still edible",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria that need moisture simply dry out and die before they can ever take hold.",
+                "image_prompt": "extreme macro of thick golden honey slowly dripping in a glistening ribbon, amber light, appetizing, cinematic detail",
+                "motion": "pan_right",
+                "caption": "No water, no rot",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "The bees add the final touch. An enzyme from their bodies releases tiny amounts of hydrogen peroxide, and the honey itself is acidic. Together they form a natural preservative almost nothing survives.",
+                "image_prompt": "honeybees clustered on a golden dripping honeycomb in warm sunlight, richly detailed, cinematic wildlife macro",
+                "motion": "zoom_in",
+                "caption": "The bees' secret",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "So long as it stays sealed and dry, a jar of honey can outlast whole empires. The next spoonful you eat may well still be sweet a thousand years from now.",
+                "image_prompt": "a spoon lifting glistening honey from an open jar in golden morning light, warm, inviting, cinematic",
+                "motion": "zoom_out",
+                "caption": "Sweeter than empires",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The 2,000-Year-Old Computer Found in a Shipwreck",
+        shots=(
+            {
+                "narration": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer.",
+                "image_prompt": "corroded bronze gear fragment encrusted with sea deposits on a dark surface, mysterious, museum lighting, cinematic close up",
+                "motion": "zoom_in",
+                "caption": "A lump of bronze",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It was a hand-cranked machine, built by ancient Greeks to model the motion of the heavens themselves.",
+                "image_prompt": "intricate interlocking ancient bronze gears in extreme detail, glowing golden light, mechanical, cinematic macro",
+                "motion": "pan_left",
+                "caption": "Dozens of gears",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "Turn its crank and it tracked the sun and moon, predicted their phases, even forecast eclipses years in advance. Nothing this intricate would appear again anywhere for over a thousand years.",
+                "image_prompt": "reconstruction of the antikythera mechanism with rotating dials and pointers, glowing bronze, dramatic, cinematic",
+                "motion": "zoom_in",
+                "caption": "It predicted eclipses",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "We assume our ancestors were simpler than us. But someone, twenty centuries ago, held the whole sky inside a box of gears. And then that knowledge vanished into the sea.",
+                "image_prompt": "an ancient bronze mechanism sinking slowly through deep blue seawater pierced by shafts of light, haunting, cinematic",
+                "motion": "zoom_out",
+                "caption": "The sky in a box",
+                "duration_s": 7.0,
+            },
+        ),
+    ),
+    Seed(
+        title="The Explosion That Flattened a Siberian Forest",
+        shots=(
+            {
+                "narration": "One morning in 1908, over a remote stretch of Siberia, the sky split open with a blast a thousand times stronger than an atomic bomb. And almost no one was there to see it.",
+                "image_prompt": "vast siberian taiga forest at dawn with a blinding fireball streaking across the sky, dramatic, atmospheric, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "1908, Siberia",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "It leveled eighty million trees across an area larger than a city, snapping them flat like matchsticks, all pointing away from one empty center. And yet there was no crater at all.",
+                "image_prompt": "endless field of fallen trees lying flat in the same direction across a barren siberian landscape, grey light, eerie, cinematic aerial",
+                "motion": "pan_right",
+                "caption": "80 million trees, no crater",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "The cause was almost certainly a comet or asteroid that exploded miles above the ground, unleashing all of its energy as a searing blast of air before it ever touched the earth.",
+                "image_prompt": "a brilliant meteor exploding in a blinding airburst high above a dark forest, dramatic sky, luminous, cinematic",
+                "motion": "zoom_in",
+                "caption": "An airburst",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "Had it arrived just a few hours later, it might have erased a major city instead of empty forest. Tunguska is a quiet reminder that the sky is not always as still as it seems.",
+                "image_prompt": "peaceful starry night sky over a silhouetted forest, calm but faintly ominous, deep blue, cinematic",
+                "motion": "zoom_out",
+                "caption": "The sky isn't still",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Whale Whose Song No Other Whale Can Hear",
+        shots=(
+            {
+                "narration": "Somewhere in the Pacific swims a whale that has been calling out for decades, in a voice no other whale seems able to answer. Scientists came to call it the loneliest whale in the world.",
+                "image_prompt": "a lone whale silhouette in vast deep blue ocean with sunbeams streaming from above, solitary, atmospheric, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "The loneliest whale",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Most whales sing at a low, resonant pitch. But this one calls at fifty-two hertz, far higher than its own kind ever uses, like a voice speaking a language nobody else seems to know.",
+                "image_prompt": "abstract underwater sound waves rippling through dark blue water around a distant whale, glowing, ethereal, cinematic",
+                "motion": "pan_left",
+                "caption": "A voice at 52 hertz",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "For years, sonar arrays tracked its song across the ocean, always alone, never joined. No one knows if it is deaf, a rare hybrid, or simply one of a kind. It has never once been seen.",
+                "image_prompt": "a glowing green sonar screen showing a single moving blip in a dark control room, technical, moody, cinematic",
+                "motion": "zoom_in",
+                "caption": "Tracked but never seen",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "Maybe it truly is alone, or maybe others hear it and we simply cannot. Either way, somewhere out there tonight, a single voice is still singing into the dark.",
+                "image_prompt": "moonlit ocean surface stretching to the horizon at night with a faint ripple below, haunting, serene, cinematic",
+                "motion": "zoom_out",
+                "caption": "Still singing",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
 )
 
 # Titles in seed order — the topic stage's evergreen seed list.

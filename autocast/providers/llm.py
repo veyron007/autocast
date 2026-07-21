@@ -16,9 +16,13 @@ NOTES:
   shot-list (direction) stage (research §1); gated by `allow_cerebras`.
 - Cloudflare Workers AI bills on overage -> gated behind `cloudflare_budget_cents`
   (0 = never use it; the documented kill-switch in config).
-- The keyless Pollinations text tier now returns HTTP 402 for anonymous requests
-  too (it started charging "pollen"), so it is no longer a reliable free provider
-  — kept only as a fast-failing final attempt in case a free tier returns.
+- The keyless Pollinations text tier is cost-gated to ~0: the anonymous identity
+  carries a 0.0000-pollen budget, so only trivially-cheap (~0-cost) completions
+  return 200 — any real script/shot-list generation returns HTTP 402. Verified
+  2026-07-21 (see docs/research/keyless-llm-text-spike.md). It is NOT a reliable
+  free provider; kept only as a fast-failing final attempt in case a free tier
+  returns. Keyless dynamic text needs one (human-added) free key — there is no
+  ToS-clean keyless text endpoint, unlike keyless Pollinations *images*.
 """
 
 from __future__ import annotations
