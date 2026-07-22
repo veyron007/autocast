@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import functools
 import logging
+import re
 import subprocess
 from pathlib import Path
 
@@ -50,6 +51,25 @@ def probe_duration(path: str | Path) -> float:
         return float(out)
     except ValueError:
         return 0.0
+
+
+_VOL_RE = re.compile(r"(mean|max)_volume:\s*(-?\d+(?:\.\d+)?) dB")
+
+
+def detect_volume(path: str | Path) -> tuple[float, float]:
+    """Return `(mean_db, max_db)` for a media file's audio via FFmpeg's
+    `volumedetect`. A silent track reports a floor near -91 dB; a missing/unparsed
+    reading returns `-inf`, so callers can assert `max_db > threshold` to prove a
+    track is *not* silent. Used by the render guard test (Cycle 14: music bed)."""
+    proc = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), "-af", "volumedetect", "-f", "null", "-"],
+        capture_output=True,
+        text=True,
+    )
+    readings: dict[str, float] = {}
+    for kind, value in _VOL_RE.findall(proc.stderr):
+        readings[kind] = float(value)
+    return readings.get("mean", float("-inf")), readings.get("max", float("-inf"))
 
 
 @functools.lru_cache(maxsize=None)

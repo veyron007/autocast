@@ -113,9 +113,11 @@ uv run python -m autocast.orchestrator --run-id "$(date -u +%F)"
 ```
 
 This runs the whole chain for real: images from keyless Pollinations Flux, voice
-from `edge-tts` (with a local macOS `say` fallback), FFmpeg Ken Burns + mux, and a
-Pillow thumbnail. Upload is skipped unless the YouTube secrets are set. Output:
-`runs/<today>/assets/final.mp4` (1080p, voiced).
+from `edge-tts` (with a local macOS `say` fallback), a **CC0 ambient music bed**
+synthesized with FFmpeg (no key, no network, no attribution — so even a keyless
+render is *scored*, not silent), FFmpeg Ken Burns + mux (music ducked under the
+narration), and a Pillow thumbnail. Upload is skipped unless the YouTube secrets
+are set. Output: `runs/<today>/assets/final.mp4` (1080p, voiced + scored).
 
 ## Add real content with ONE free key
 
@@ -138,5 +140,6 @@ cascade tries them in order and degrades to the template if all fail.
 
 ## Status
 
-Renders a real 1080p MP4 end-to-end today; content is dynamic once a free LLM key
-is added (above); publishing stays gated behind the YouTube compliance audit.
+Renders a real 1080p MP4 end-to-end today — voiced and scored with a CC0 ambient
+bed; content is dynamic once a free LLM key is added (above); publishing stays
+gated behind the YouTube compliance audit.

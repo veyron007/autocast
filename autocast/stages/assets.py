@@ -2,9 +2,11 @@
 
 Reads `spine.shots` (captions + timing windows) and `spine.audio`, writes
 `spine.assets` (music path/source, captions .ass path, license manifest). Music
-is Pixabay (no attribution); stock is Pexels. Both stubbed in dry-run. The .ass
-captions ARE built for real from the shot timing windows — that's cheap and it
-proves the sync path.
+is a procedurally synthesized **CC0 ambient bed** (no key, no network, no
+attribution) so even a fully keyless render is scored instead of silent; a keyed
+Pixabay/Freesound pick can layer in later. Stock is Pexels (still stubbed). The
+.ass captions ARE built for real from the shot timing windows — that's cheap and
+it proves the sync path.
 
 License provenance matters (research §6): every asset gets a license_manifest row
 so compliance is auditable.
@@ -15,11 +17,18 @@ from __future__ import annotations
 import logging
 
 from autocast.config import Config
+from autocast.ffmpeg.ambient import build_ambient_cmd
+from autocast.ffmpeg.run import FFmpegError, run_ffmpeg
 from autocast.spine import Assets, LicenseEntry, Run
 
 log = logging.getLogger("autocast.stages.assets")
 
 STAGE = "assets"
+
+# Bespoke synthesized bed: no copyright, no attribution obligation.
+_MUSIC_FILE = "music.wav"
+_MUSIC_SOURCE = "synth-ambient-cc0"
+_MUSIC_LICENSE = "CC0-1.0"
 
 _ASS_HEADER = """[Script Info]
 ScriptType: v4.00+
@@ -71,15 +80,29 @@ def run(spine: Run, cfg: Config, *, dry_run: bool = False) -> Run:
     music_source: str | None = None
 
     if dry_run:
-        # TODO(real): Pixabay Music API pick + download; else pre-staged YTAL pool.
-        (assets_dir / "music.mp3").touch()
-        music_path = "assets/music.mp3"
+        # Stub the bed (zero bytes) so the dry-run spine has the same shape as a
+        # real render without shelling out to FFmpeg.
+        (assets_dir / _MUSIC_FILE).touch()
+        music_path = f"assets/{_MUSIC_FILE}"
         music_source = "dryrun-stub"
-        license_manifest.append(LicenseEntry(asset="music.mp3", license="stub", attribution=False))
+        license_manifest.append(LicenseEntry(asset=_MUSIC_FILE, license="stub", attribution=False))
     else:
-        # TODO(real): fetch Pixabay music + optional Pexels stock; append real
-        #             license rows. Guard behind cfg.pixabay_api_key / pexels_api_key.
-        log.warning("assets: live music/stock fetch not implemented (Cycle 4)")
+        # Synthesize a CC0 ambient bed the length of the narration. No key, no
+        # network, no attribution — a keyless render is now scored, not silent.
+        # A synth failure degrades to a still-rendered (silent) video rather than
+        # failing the run: the spine treats a partial result as first-class.
+        # TODO(keyed): a Pixabay/Freesound pick can override this when a key exists.
+        duration_s = spine.audio.duration_s if spine.audio else float(cfg.target_len_s)
+        music_out = assets_dir / _MUSIC_FILE
+        try:
+            run_ffmpeg(build_ambient_cmd(out_path=str(music_out), duration_s=duration_s))
+            music_path = f"assets/{_MUSIC_FILE}"
+            music_source = _MUSIC_SOURCE
+            license_manifest.append(
+                LicenseEntry(asset=_MUSIC_FILE, license=_MUSIC_LICENSE, attribution=False)
+            )
+        except (FFmpegError, FileNotFoundError, OSError) as exc:
+            log.warning("assets: ambient bed synth failed (%s) -> rendering without music", exc)
 
     spine.assets = Assets(
         music_path=music_path,
