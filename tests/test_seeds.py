@@ -29,10 +29,11 @@ _SHOT_KEYS = {"narration", "image_prompt", "motion", "caption", "duration_s"}
 # ---- seed data integrity ----
 
 def test_seed_titles_unique():
-    # Cycle 11 doubled the keyless rotation 5 -> 10; Cycle 13 grew it 10 -> 15.
-    # Guard against regressions that would silently shrink the channel's
+    # Cycle 11 doubled the keyless rotation 5 -> 10; Cycle 13 grew it 10 -> 15;
+    # Cycle 23 grew it 15 -> 20 (crypto/navigation/neuroscience/chemistry/geology
+    # seeds). Guard against regressions that would silently shrink the channel's
     # pre-repeat runway back down.
-    assert len(SEED_TITLES) == len(set(SEED_TITLES)) >= 15
+    assert len(SEED_TITLES) == len(set(SEED_TITLES)) >= 20
 
 
 def test_every_seed_shot_is_wellformed():

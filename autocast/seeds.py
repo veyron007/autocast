@@ -552,6 +552,171 @@ SEEDS: tuple[Seed, ...] = (
             },
         ),
     ),
+    Seed(
+        title="The Secret Code That Ended a War in Silence",
+        shots=(
+            {
+                "narration": "In the depths of World War Two, German commanders sent their orders through a machine that scrambled every message into gibberish. They believed the code was unbreakable. They were wrong.",
+                "image_prompt": "vintage 1940s enigma cipher machine with rows of keys and glowing lamps on a dark wooden desk, dramatic side light, high detail, cinematic close up",
+                "motion": "zoom_in",
+                "caption": "An unbreakable code",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "The Enigma machine had billions upon billions of settings, and the Germans reset them every single day. Cracking it by hand was hopeless. So a secret team built a machine to fight a machine.",
+                "image_prompt": "close up of the intricate rotors and tangled wiring inside an enigma machine, brass contacts glinting, moody amber light, cinematic macro",
+                "motion": "pan_right",
+                "caption": "Billions of settings",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "In a quiet English manor called Bletchley Park, a mathematician named Alan Turing designed a whirring electromechanical giant, the bombe, that raced through possible settings until the day's code fell open.",
+                "image_prompt": "1940s codebreaking hall with a large electromechanical bombe machine of spinning drums, figures at desks, dim period lighting, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "A machine to hunt codes",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "The intelligence pulled from that broken code, kept utterly secret, is thought to have shortened the war by around two years. A silent victory won not with weapons, but with patience and mathematics.",
+                "image_prompt": "a single deciphered telegram page under a lone desk lamp in a darkened wartime office, atmospheric, intimate, cinematic still life",
+                "motion": "zoom_out",
+                "caption": "Won with mathematics",
+                "duration_s": 7.0,
+            },
+        ),
+    ),
+    Seed(
+        title="The Sailors Who Crossed an Ocean Without Maps",
+        shots=(
+            {
+                "narration": "Long before compasses reached the Pacific, Polynesian navigators sailed thousands of miles across open ocean to find tiny islands, with no maps, no instruments, and no sight of land for weeks.",
+                "image_prompt": "a traditional polynesian double-hulled sailing canoe on a vast open ocean at sunrise, tiny against the horizon, majestic, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "No maps, no compass",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Instead, they read the sky. They memorized where dozens of stars rose and set, using them as a great compass wheeling overhead, steering toward the point on the horizon where the right star would climb.",
+                "image_prompt": "night sky brimming with brilliant stars arcing over a calm dark ocean, the milky way mirrored on the water, serene, cinematic",
+                "motion": "pan_left",
+                "caption": "A compass of stars",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "When clouds hid the stars, they read the sea itself, feeling the deep swells roll beneath the hull and watching how the waves bent around islands still far beyond the edge of sight.",
+                "image_prompt": "close up of ocean swells and rolling waves catching low golden light, richly textured water surface, dynamic, cinematic detail",
+                "motion": "zoom_in",
+                "caption": "Reading the waves",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "With this living knowledge they settled a triangle of islands larger than any empire, from Hawaii to New Zealand. Modern voyages have proven it still works, guided by nothing but sky, wind, and water.",
+                "image_prompt": "polynesian voyaging canoe approaching a lush green island at golden hour, palm-lined shore ahead, hopeful, cinematic wide shot",
+                "motion": "zoom_out",
+                "caption": "An ocean mapped by memory",
+                "duration_s": 7.0,
+            },
+        ),
+    ),
+    Seed(
+        title="Why You Cannot Tickle Yourself",
+        shots=(
+            {
+                "narration": "Try to tickle yourself, and nothing happens. Yet the very same touch from someone else can make you squirm and laugh helplessly. Your brain treats the two as completely different things. Why?",
+                "image_prompt": "playful close up of a hand reaching out in soft natural light against a warm blurred background, gentle, human, cinematic",
+                "motion": "zoom_in",
+                "caption": "Try it yourself",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "The answer lies in prediction. Every time you move, a part of your brain called the cerebellum forecasts exactly what you are about to feel, and quietly cancels out the sensation before it even arrives.",
+                "image_prompt": "glowing anatomical illustration of the human brain highlighting the cerebellum, blue neural light on a dark field, scientific, cinematic",
+                "motion": "pan_right",
+                "caption": "The brain predicts touch",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Because your own fingers are predictable, the feeling is dulled to almost nothing. But another person's touch is a surprise your brain cannot forecast, so the full, startling sensation rushes straight through.",
+                "image_prompt": "abstract visualization of a nerve signal traveling as a bright pulse along a glowing pathway, electric blue on black, cinematic",
+                "motion": "zoom_in",
+                "caption": "Surprise can't be dulled",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "It is a tiny glimpse of something profound. Your brain is not just feeling the world, it is constantly guessing it, a fraction of a second ahead. In a real sense, you live inside its predictions.",
+                "image_prompt": "a person's calm face half in shadow lit by soft directional light, contemplative, intimate portrait, cinematic",
+                "motion": "zoom_out",
+                "caption": "You live in predictions",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Element We Found on the Sun First",
+        shots=(
+            {
+                "narration": "There is an element so common it fills the stars, yet we discovered it not here on Earth, but ninety-three million miles away, glowing in the light of the sun itself.",
+                "image_prompt": "the blazing surface of the sun with towering solar flares and swirling plasma, intense orange and gold, dramatic, cinematic",
+                "motion": "zoom_in",
+                "caption": "Found in the sun",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "During a solar eclipse in 1868, astronomers spread the sun's light into a rainbow and spotted a single bright yellow line, a color that matched no element then known anywhere on Earth.",
+                "image_prompt": "a glowing spectrum of light split into rainbow bands with one distinct bright yellow line, dark laboratory background, scientific, cinematic macro",
+                "motion": "pan_right",
+                "caption": "A mystery yellow line",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "They named the mysterious substance helium, after Helios, the Greek god of the sun. For nearly thirty years it stayed a ghost, seen only in starlight, until at last it was captured here on Earth.",
+                "image_prompt": "vintage nineteenth century brass spectroscope instrument on a wooden bench in warm lamplight, antique scientific apparatus, cinematic detail",
+                "motion": "zoom_in",
+                "caption": "Named for the sun",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Today that same element lifts balloons and cools machines, the second most abundant thing in the entire universe. And we knew the sun held it long before we ever held it in our own hands.",
+                "image_prompt": "a single glowing balloon rising into a vast twilight sky dotted with early stars, whimsical yet grand, cinematic",
+                "motion": "zoom_out",
+                "caption": "Starlight, then our hands",
+                "duration_s": 6.5,
+            },
+        ),
+    ),
+    Seed(
+        title="The Day the Mediterranean Ran Dry",
+        shots=(
+            {
+                "narration": "Around six million years ago, one of the world's great seas nearly vanished. The Mediterranean, today a sparkling blue expanse, became a scorched desert of salt, sunk far below the level of the ocean.",
+                "image_prompt": "vast cracked salt flat stretching to distant dry mountains under a harsh sun, blinding white and ochre, desolate, cinematic wide shot",
+                "motion": "zoom_in",
+                "caption": "A sea turned desert",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Its narrow doorway to the Atlantic slowly closed, and under the relentless sun the trapped water began to evaporate faster than any river could refill it, shrinking into scattered, dying salt lakes.",
+                "image_prompt": "aerial view of shrinking briny salt lakes ringed by thick white salt crusts in a sunken basin, surreal, harsh light, cinematic",
+                "motion": "pan_left",
+                "caption": "The doorway closed",
+                "duration_s": 6.5,
+            },
+            {
+                "narration": "It left behind salt deposits kilometers thick, still buried beneath the seabed today. For hundreds of thousands of years the mighty Mediterranean was little more than a deep, blinding, lifeless canyon of white.",
+                "image_prompt": "a deep dry canyon floor coated in thick white salt beneath towering rock walls, otherworldly, stark shadows, cinematic",
+                "motion": "zoom_in",
+                "caption": "Salt kilometers deep",
+                "duration_s": 7.0,
+            },
+            {
+                "narration": "Then the Atlantic broke through at last, and a waterfall beyond imagining came roaring in, refilling the entire sea in perhaps just a few years, one of the greatest floods the Earth has ever seen.",
+                "image_prompt": "a colossal waterfall thundering through a rocky strait into a vast empty basin, immense spray and power, dramatic, cinematic wide shot",
+                "motion": "zoom_out",
+                "caption": "The great flood returned",
+                "duration_s": 7.0,
+            },
+        ),
+    ),
 )
 
 # Titles in seed order — the topic stage's evergreen seed list.

@@ -78,8 +78,11 @@ hand-authored, coherent videos (`autocast/seeds.py`). A keyless channel now ship
 script↔shot-list coherence invariant enforced by `tests/test_seeds.py`.
 Cycle 13 grew the rotation again, **10 → 15** bespoke seeds (ancient revived
 seeds, the world's largest fungus, Tambora's "year without a summer", shape-
-memory metal, and birds that sleep in flight), so a keyless channel now runs
-**15 distinct days** before any repeat.
+memory metal, and birds that sleep in flight). Cycle 23 grew it once more,
+**15 → 20**, adding five fresh-domain seeds (Enigma codebreaking, Polynesian
+wayfinding, why you can't tickle yourself, helium found on the sun, and the
+Mediterranean drying up), so a keyless channel now runs **20 distinct days**
+before any repeat.
 
 ## What would flip this to GO (human levers, unchanged)
 
