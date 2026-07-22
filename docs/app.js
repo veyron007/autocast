@@ -65,6 +65,7 @@
   let queueDirty = false;
   let logLines = [];            // parsed run.log.jsonl for the selected run
   let logShowAll = false;       // signal-log filter: false = warnings/errors only
+  let history = [];             // [{run_id, byStage:{name:ms}, total}] oldest→newest
 
   const token = () => localStorage.getItem(TOKEN_KEY) || "";
   const ghHeaders = () => ({
@@ -138,6 +139,7 @@
 
     renderReel();
     await computeChannelStatus();
+    loadHistory();                       // cross-run trend; async, non-blocking
     if (manifest.length) select(manifest[0].run_id);
     await loadQueue();
 
@@ -211,6 +213,147 @@
       });
       strip.appendChild(f);
     });
+  }
+
+  // ══ THE TREND: cross-run render-history scope bank ══════════════════════
+  // The single-run Timeline shows where one run spent its life; this shows how
+  // each stage's wall time is moving across the whole reel — is the machine
+  // speeding up or slowing down? Reuses durMs() (mirrors StageRecord.duration_ms).
+  const HISTORY_CAP = 24;               // bound the boot fan-out; newest N runs
+  const DELTA_BAND = 4;                 // ±% within which a trend reads as "steady"
+  const TREND_FLOOR_MS = 50;            // stages that never cross this are instant book-keeping (skip)
+
+  async function loadHistory() {
+    const wrap = $("trend"), note = $("trendNote");
+    if (!manifest.length) { history = []; if (wrap) wrap.hidden = true; return; }
+    note.textContent = "reading render history…";
+    const recent = manifest.slice(0, HISTORY_CAP);   // manifest is newest-first
+    const runs = await Promise.all(recent.map(async (m) => {
+      try {
+        const run = await fetchJSON(`runs/${m.run_id}/run.json`);
+        return { run_id: m.run_id, stages: run.stages || [] };
+      } catch { return null; }                         // a missing run just drops out
+    }));
+    // oldest → newest so the scope traces read left (past) to right (now)
+    history = runs.filter(Boolean).reverse().map((r) => {
+      const byName = Object.fromEntries(r.stages.map((s) => [s.name, s]));
+      const byStage = {};
+      let total = 0, any = false;
+      STAGE_ORDER.forEach((name) => {
+        const ms = durMs(byName[name]);
+        byStage[name] = ms;
+        if (ms != null) { total += ms; any = true; }
+      });
+      return { run_id: r.run_id, byStage, total: any ? total : null };
+    });
+    renderHistory();
+  }
+
+  // Median of a run's prior samples vs its latest → faster / slower / steady.
+  function verdict(series) {
+    const nums = series.map((p) => p.v).filter((v) => v != null);
+    if (nums.length < 2) return null;
+    const latest = nums[nums.length - 1];
+    const prior = nums.slice(0, -1).slice().sort((a, b) => a - b);
+    const mid = Math.floor(prior.length / 2);
+    const med = prior.length % 2 ? prior[mid] : (prior[mid - 1] + prior[mid]) / 2;
+    const priorN = prior.length;
+    if (!med) return { dir: latest > 0 ? "slower" : "flat", pct: 0, ratio: Infinity, priorN };
+    const pct = Math.round(((latest - med) / med) * 100);
+    const dir = pct <= -DELTA_BAND ? "faster" : pct >= DELTA_BAND ? "slower" : "flat";
+    return { dir, pct: Math.abs(pct), ratio: latest / med, priorN };
+  }
+
+  // Render time can swing orders of magnitude (a cold vs cached stage, or a
+  // stage that just gained a feature). A multiplier reads far better than a
+  // four-digit percentage; keep the % for gentle moves.
+  function fmtDelta(v) {
+    if (v.dir === "flat") return "steady";
+    const r = v.dir === "faster" ? 1 / v.ratio : v.ratio;   // ≥1 magnitude
+    const mag = r >= 10 ? `${Math.round(r)}×` : r >= 2 ? `${r.toFixed(1)}×` : `${v.pct}%`;
+    return `${mag} ${v.dir}`;
+  }
+
+  function deltaChip(v, withNote) {
+    if (!v) return `<span class="scope__delta scope__delta--none">— no prior</span>`;
+    const glyph = v.dir === "faster" ? "▼" : v.dir === "slower" ? "▲" : "▪";
+    const ref = v.priorN === 1 ? "vs previous" : `vs ${v.priorN}-run median`;
+    const note = withNote ? ` <span class="scope__delta-note">${ref}</span>` : "";
+    return `<span class="scope__delta scope__delta--${v.dir}">${glyph} ${esc(fmtDelta(v))}${note}</span>`;
+  }
+
+  // Hand-drawn phosphor sparkline. Nulls are gaps: the trace connects the
+  // nearest timed samples but keeps every sample's true x by index. A single
+  // sample draws just the live blip; an empty series draws a flat baseline.
+  function sparkSVG(series) {
+    const W = 240, H = 46, pad = 4;
+    const nums = series.map((p) => p.v).filter((v) => v != null);
+    const base = `<line class="spark__base" x1="0" y1="${H - pad}" x2="${W}" y2="${H - pad}" vector-effect="non-scaling-stroke"/>`;
+    if (!nums.length) return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${base}</svg>`;
+    const min = Math.min(...nums), max = Math.max(...nums), span = (max - min) || 1;
+    const n = series.length;
+    const xAt = (i) => n <= 1 ? W / 2 : pad + (i / (n - 1)) * (W - 2 * pad);
+    const yAt = (v) => (H - pad) - ((v - min) / span) * (H - 2 * pad);
+    const pts = [];
+    series.forEach((p, i) => { if (p.v != null) pts.push([xAt(i), yAt(p.v)]); });
+    const [lx, ly] = pts[pts.length - 1];
+    let body = "";
+    if (pts.length >= 2) {
+      const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+      const area = `M${pts[0][0].toFixed(1)} ${H - pad} ` +
+        pts.map(([x, y]) => `L${x.toFixed(1)} ${y.toFixed(1)}`).join(" ") +
+        ` L${lx.toFixed(1)} ${H - pad} Z`;
+      body = `<path class="spark__area" d="${area}"/>` +
+             `<path class="spark__line" d="${line}" vector-effect="non-scaling-stroke"/>`;
+    }
+    body += `<circle class="spark__dot" cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="2.4" vector-effect="non-scaling-stroke"/>`;
+    return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">${base}${body}</svg>`;
+  }
+
+  function renderHistory() {
+    const wrap = $("trend"), body = $("trendBody"), note = $("trendNote");
+    if (!history.length) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    const n = history.length;
+    const oldest = history[0].run_id, newest = history[n - 1].run_id;
+    note.textContent = n === 1
+      ? "1 run on file · the trend fills in as the daily cron runs"
+      : `${n} runs on file · newest vs its own history · lower is faster`;
+
+    // hero — total compute per run
+    const totalSeries = history.map((h) => ({ v: h.total, id: h.run_id }));
+    const tv = verdict(totalSeries);
+    const hero =
+      `<div class="scope scope--hero"${tv ? ` data-dir="${tv.dir}"` : ""}>` +
+        `<div class="scope__meta">` +
+          `<span class="scope__name">▚ Total compute</span>` +
+          `<span class="scope__val">${esc(fmtDur(history[n - 1].total))}</span>` +
+          deltaChip(tv, true) +
+        `</div>` +
+        `<div class="scope__screen">${sparkSVG(totalSeries)}</div>` +
+        `<div class="scope__axis"><span>${esc(oldest)}</span>` +
+          `<span class="scope__axis-mid">${n} run${n > 1 ? "s" : ""} · oldest → now</span>` +
+          `<span>${esc(newest)}</span></div>` +
+      `</div>`;
+
+    // small multiples — one scope per stage that ever took real time
+    const cells = STAGE_ORDER.map((name) => {
+      const series = history.map((h) => ({ v: h.byStage[name], id: h.run_id }));
+      const maxV = Math.max(0, ...series.map((p) => p.v || 0));
+      if (maxV < TREND_FLOOR_MS) return "";   // instant book-keeping stage (e.g. upload)
+      const v = verdict(series);
+      const latest = series[series.length - 1].v;
+      return `<div class="scope scope--mini"${v ? ` data-dir="${v.dir}"` : ""}>` +
+          `<div class="scope__meta">` +
+            `<span class="scope__name">${esc(name)}</span>` +
+            `<span class="scope__val">${esc(fmtDur(latest))}</span>` +
+          `</div>` +
+          `<div class="scope__screen">${sparkSVG(series)}</div>` +
+          `<div class="scope__foot">${deltaChip(v, false)}</div>` +
+        `</div>`;
+    }).join("");
+
+    body.innerHTML = hero + `<div class="scope-bank">${cells}</div>`;
   }
 
   // ══ SELECT + DETAIL ════════════════════════════════════════════════════

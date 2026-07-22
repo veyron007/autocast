@@ -69,6 +69,19 @@
     </div>
   </section>
 
+  <!-- ─────────────────────────── THE TREND ─────────────────────────── -->
+  <!-- Cross-run render history: a scope-bank of per-stage wall time over time,
+       so the desk shows whether the machine is speeding up or slowing down. -->
+  <section class="trend" id="trend" aria-label="Render history" hidden>
+    <div class="trend__head">
+      <h2 class="section-title">The Trend</h2>
+      <span class="section-note" id="trendNote">render history · is the machine speeding up?</span>
+    </div>
+    <div class="trend__body" id="trendBody">
+      <div class="scope scope--ghost">reading render history…</div>
+    </div>
+  </section>
+
   <!-- ─────────────────────────── MAIN STAGE ────────────────────────── -->
   <main class="stage">
     <!-- LEFT: selected run detail -->

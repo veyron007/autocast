@@ -9,11 +9,18 @@ gives one real UI — not the CLI — for watching runs and steering the channel
 ## What it shows (reads)
 
 - **The Reel** — every run from `runs/manifest.json`, newest first, with its thumbnail.
+- **The Trend** — a cross-run **scope bank**: total compute plus each stage's wall time
+  drawn as a phosphor sparkline over the whole run history, so the desk shows at a glance
+  whether the machine is **speeding up or slowing down** (green trace = holding/faster,
+  amber = slower). Reuses the per-stage timing already derivable from each run's spine.
 - **The Spine** — the nine synchronized stages of the selected run from
   `runs/<id>/run.json`, drawn as a **signal chain**: the wire lights green wherever the
   signal passed (topic → script → direction → images → tts → assets → video → thumbnail
   → upload), amber where a stage is rendering, red where it failed. This is the standing
   directive made visible — *script drives direction drives generation drives upload*.
+- **The Timeline & Signal Log** — the selected run's per-stage wall time as an edit-track
+  of duration bars (widest bar = slowest cut), and the run's own `run.log.jsonl` tail
+  filtered to the warnings/errors that explain any red wire.
 - **Shot list, shooting script, publish state, render config** — straight from the spine,
   including which provider and which seed produced each stage.
 
