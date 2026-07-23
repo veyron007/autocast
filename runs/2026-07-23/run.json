@@ -1,0 +1,200 @@
+{
+  "run_id": "2026-07-23",
+  "schema_version": 1,
+  "created_at": "2026-07-23T08:09:57.606471+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Why the Roman Concrete Recipe Was Lost",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Along the coast of Italy, Roman harbor walls have stood in crashing seawater for two thousand years. Modern concrete piers poured beside them are already crumbling after fifty. How? The answer was hidden in the mix. Roman builders folded in chunks of quicklime and volcanic ash, then blended it scorching hot, leaving tiny white reservoirs of self-repair locked inside the stone. When a crack forms and water seeps in, that lime dissolves and recrystallizes, sealing the gap before it can spread. The concrete literally heals itself. But the recipe was never written down. As Rome fell, the knowledge passed away with its engineers, and for over a thousand years it was simply lost. Only now, in modern labs, are we relearning what the Romans somehow already knew.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Along the coast of Italy, Roman harbor walls have stood in crashing seawater for two thousand years. Modern concrete piers poured beside them are already crumbling after fifty. How?",
+      "image_prompt": "ancient roman harbor breakwater in crashing turquoise sea at golden hour, massive weathered stone, cinematic wide shot, dramatic light",
+      "duration_s": 12.258,
+      "motion": "zoom_in",
+      "caption": "2,000 years in the sea",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 12.258
+    },
+    {
+      "idx": 1,
+      "narration": "The answer was hidden in the mix. Roman builders folded in chunks of quicklime and volcanic ash, then blended it scorching hot, leaving tiny white reservoirs of self-repair locked inside the stone.",
+      "image_prompt": "extreme close up of an ancient roman concrete cross-section showing bright white lime clasts, textured, high detail, museum lighting",
+      "duration_s": 12.546,
+      "motion": "pan_right",
+      "caption": "A self-healing mix",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 12.258,
+      "audio_end_s": 24.804
+    },
+    {
+      "idx": 2,
+      "narration": "When a crack forms and water seeps in, that lime dissolves and recrystallizes, sealing the gap before it can spread. The concrete literally heals itself. But the recipe was never written down.",
+      "image_prompt": "macro view of a hairline crack in pale stone slowly filling with white crystals, scientific, softly glowing, cinematic",
+      "duration_s": 12.618,
+      "motion": "zoom_in",
+      "caption": "Cracks that seal themselves",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 24.804,
+      "audio_end_s": 37.422
+    },
+    {
+      "idx": 3,
+      "narration": "As Rome fell, the knowledge passed away with its engineers, and for over a thousand years it was simply lost. Only now, in modern labs, are we relearning what the Romans somehow already knew.",
+      "image_prompt": "modern materials science laboratory with a glowing concrete sample under blue light, futuristic, clean, cinematic",
+      "duration_s": 12.786,
+      "motion": "zoom_out",
+      "caption": "Rediscovered at last",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 37.422,
+      "audio_end_s": 50.208
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 50.208,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 50.208,
+    "size_bytes": 7889726
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "Why the Roman Concrete Recipe Was Lost",
+    "description": "Along the coast of Italy, Roman harbor walls have stood in crashing seawater for two thousand years. Modern concrete piers poured beside them are already crumbling after fifty. How? The answer was hidden in the mix. Roman builders folded in chunks of quicklime and volcanic ash, t\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "roman",
+      "concrete",
+      "recipe",
+      "lost"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:09:57.606875+00:00",
+      "ended_at": "2026-07-23T08:09:59.479549+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:09:59.480075+00:00",
+      "ended_at": "2026-07-23T08:10:19.516974+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:10:19.517629+00:00",
+      "ended_at": "2026-07-23T08:10:20.313133+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:10:20.313628+00:00",
+      "ended_at": "2026-07-23T08:10:22.008570+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:10:22.009088+00:00",
+      "ended_at": "2026-07-23T08:10:36.622338+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:10:36.623044+00:00",
+      "ended_at": "2026-07-23T08:10:37.109132+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:10:37.109756+00:00",
+      "ended_at": "2026-07-23T08:12:07.417125+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-23T08:12:07.417740+00:00",
+      "ended_at": "2026-07-23T08:12:07.637781+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-07-23T08:12:07.638314+00:00",
+      "ended_at": "2026-07-23T08:12:07.638757+00:00"
+    }
+  ]
+}

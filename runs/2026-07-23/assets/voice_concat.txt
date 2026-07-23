@@ -1,0 +1,4 @@
+file '/home/runner/work/autocast/autocast/runs/2026-07-23/assets/voice_000.wav'
+file '/home/runner/work/autocast/autocast/runs/2026-07-23/assets/voice_001.wav'
+file '/home/runner/work/autocast/autocast/runs/2026-07-23/assets/voice_002.wav'
+file '/home/runner/work/autocast/autocast/runs/2026-07-23/assets/voice_003.wav'
