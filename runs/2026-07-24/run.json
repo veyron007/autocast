@@ -1,0 +1,200 @@
+{
+  "run_id": "2026-07-24",
+  "schema_version": 1,
+  "created_at": "2026-07-24T08:06:16.860032+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Deep-Sea Creatures That Glow in the Dark",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Descend past a thousand meters and the sunlight vanishes completely. Yet this crushing darkness is the most lit-up place on Earth, where nine out of ten animals make their own light. It is a chemical trick called bioluminescence. A molecule named luciferin reacts with oxygen, and the energy escapes not as heat, but as cold living light, glowing blue-green through the deep. Every glow has a purpose. Anglerfish dangle a lure to trap prey. Others flash to find a mate, or erase their own shadow from below in a vanishing act called counter-illumination. By borrowing these very molecules, scientists now light up living cells, track diseases, and watch tumors grow. The deep sea's quiet glow is quietly rewriting modern medicine.",
+    "word_count": 120,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Descend past a thousand meters and the sunlight vanishes completely. Yet this crushing darkness is the most lit-up place on Earth, where nine out of ten animals make their own light.",
+      "image_prompt": "deep ocean midnight zone, pitch black water pierced by tiny points of blue bioluminescence, eerie, atmospheric, cinematic",
+      "duration_s": 11.466,
+      "motion": "zoom_in",
+      "caption": "The midnight zone",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 11.466
+    },
+    {
+      "idx": 1,
+      "narration": "It is a chemical trick called bioluminescence. A molecule named luciferin reacts with oxygen, and the energy escapes not as heat, but as cold living light, glowing blue-green through the deep.",
+      "image_prompt": "macro shot of a translucent jellyfish pulsing electric blue in dark water, bioluminescent, luminous, cinematic detail",
+      "duration_s": 12.762,
+      "motion": "pan_left",
+      "caption": "Living light",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 11.466,
+      "audio_end_s": 24.228
+    },
+    {
+      "idx": 2,
+      "narration": "Every glow has a purpose. Anglerfish dangle a lure to trap prey. Others flash to find a mate, or erase their own shadow from below in a vanishing act called counter-illumination.",
+      "image_prompt": "deep sea anglerfish with a single glowing lure hovering in black water, menacing, highly detailed, cinematic wildlife shot",
+      "duration_s": 12.45,
+      "motion": "zoom_in",
+      "caption": "A reason to glow",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 24.228,
+      "audio_end_s": 36.678
+    },
+    {
+      "idx": 3,
+      "narration": "By borrowing these very molecules, scientists now light up living cells, track diseases, and watch tumors grow. The deep sea's quiet glow is quietly rewriting modern medicine.",
+      "image_prompt": "microscope image of living cells glowing green against a black field, scientific, luminous, cinematic",
+      "duration_s": 12.138,
+      "motion": "zoom_out",
+      "caption": "From abyss to lab",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 36.678,
+      "audio_end_s": 48.816
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 48.816,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 48.816,
+    "size_bytes": 7315840
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "The Deep-Sea Creatures That Glow in the Dark",
+    "description": "Descend past a thousand meters and the sunlight vanishes completely. Yet this crushing darkness is the most lit-up place on Earth, where nine out of ten animals make their own light. It is a chemical trick called bioluminescence. A molecule named luciferin reacts with oxygen, and\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "deep-sea",
+      "creatures",
+      "glow",
+      "dark"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:06:16.860344+00:00",
+      "ended_at": "2026-07-24T08:06:18.858976+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:06:18.859367+00:00",
+      "ended_at": "2026-07-24T08:06:38.899326+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:06:38.899804+00:00",
+      "ended_at": "2026-07-24T08:06:40.238846+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:06:40.239266+00:00",
+      "ended_at": "2026-07-24T08:08:56.260342+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:08:56.260835+00:00",
+      "ended_at": "2026-07-24T08:09:11.382786+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:09:11.383173+00:00",
+      "ended_at": "2026-07-24T08:09:11.802602+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:09:11.803059+00:00",
+      "ended_at": "2026-07-24T08:10:16.825249+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-24T08:10:16.825769+00:00",
+      "ended_at": "2026-07-24T08:10:17.036205+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-07-24T08:10:17.036688+00:00",
+      "ended_at": "2026-07-24T08:10:17.036971+00:00"
+    }
+  ]
+}
