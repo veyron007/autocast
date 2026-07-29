@@ -1,0 +1,202 @@
+{
+  "run_id": "2026-07-29",
+  "schema_version": 1,
+  "created_at": "2026-07-29T08:18:26.393825+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Why Honey Is the Only Food That Never Spoils",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How? Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria that need moisture simply dry out and die before they can ever take hold. The bees add the final touch. An enzyme from their bodies releases tiny amounts of hydrogen peroxide, and the honey itself is acidic. Together they form a natural preservative almost nothing survives. So long as it stays sealed and dry, a jar of honey can outlast whole empires. The next spoonful you eat may well still be sweet a thousand years from now.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How?",
+      "image_prompt": "ancient sealed ceramic jar of golden honey inside an egyptian tomb lit by a single torch, dramatic, high detail, cinematic",
+      "duration_s": 10.914,
+      "motion": "zoom_in",
+      "caption": "3,000 years old, still edible",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 10.914
+    },
+    {
+      "idx": 1,
+      "narration": "Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria that need moisture simply dry out and die before they can ever take hold.",
+      "image_prompt": "extreme macro of thick golden honey slowly dripping in a glistening ribbon, amber light, appetizing, cinematic detail",
+      "duration_s": 12.114,
+      "motion": "pan_right",
+      "caption": "No water, no rot",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 10.914,
+      "audio_end_s": 23.028
+    },
+    {
+      "idx": 2,
+      "narration": "The bees add the final touch. An enzyme from their bodies releases tiny amounts of hydrogen peroxide, and the honey itself is acidic. Together they form a natural preservative almost nothing survives.",
+      "image_prompt": "honeybees clustered on a golden dripping honeycomb in warm sunlight, richly detailed, cinematic wildlife macro",
+      "duration_s": 13.002,
+      "motion": "zoom_in",
+      "caption": "The bees' secret",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 23.028,
+      "audio_end_s": 36.03
+    },
+    {
+      "idx": 3,
+      "narration": "So long as it stays sealed and dry, a jar of honey can outlast whole empires. The next spoonful you eat may well still be sweet a thousand years from now.",
+      "image_prompt": "a spoon lifting glistening honey from an open jar in golden morning light, warm, inviting, cinematic",
+      "duration_s": 10.17,
+      "motion": "zoom_out",
+      "caption": "Sweeter than empires",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 36.03,
+      "audio_end_s": 46.2
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 46.2,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 46.2,
+    "size_bytes": 7582687
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "Why Honey Is the Only Food That Never Spoils",
+    "description": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How? Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria tha\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "honey",
+      "is",
+      "only",
+      "food",
+      "never",
+      "spoils"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:18:26.394162+00:00",
+      "ended_at": "2026-07-29T08:18:28.902073+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:18:28.902497+00:00",
+      "ended_at": "2026-07-29T08:18:48.978065+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:18:48.978453+00:00",
+      "ended_at": "2026-07-29T08:18:50.391411+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:18:50.391970+00:00",
+      "ended_at": "2026-07-29T08:21:13.081635+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:21:13.082040+00:00",
+      "ended_at": "2026-07-29T08:21:24.055367+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:21:24.055879+00:00",
+      "ended_at": "2026-07-29T08:21:24.346537+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:21:24.347033+00:00",
+      "ended_at": "2026-07-29T08:22:31.719398+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-07-29T08:22:31.719900+00:00",
+      "ended_at": "2026-07-29T08:22:31.892710+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-07-29T08:22:31.893198+00:00",
+      "ended_at": "2026-07-29T08:22:31.893508+00:00"
+    }
+  ]
+}
