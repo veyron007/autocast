@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-08-05",
+  "schema_version": 1,
+  "created_at": "2026-08-05T08:14:56.236557+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Metal That Remembers Its Shape",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged. The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure the atoms hold two arrangements, and a little heat snaps them back from the bent shape to the one they were trained to keep. This strange memory does real work. Nitinol springs open blocked arteries from inside the body, flexes eyeglass frames back into shape, and even folds up satellites that unfurl once they reach the cold of space. We think of memory as something only minds possess. But locked inside the right metal is a kind of memory too, a shape it will always find its way back to, no matter how far you bend it.",
+    "word_count": 148,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged.",
+      "image_prompt": "a thin silver metal wire bent into a tangle resting on a clean dark surface under soft studio light, high detail, cinematic macro",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Metal that remembers",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure the atoms hold two arrangements, and a little heat snaps them back from the bent shape to the one they were trained to keep.",
+      "image_prompt": "abstract glowing crystalline lattice of atoms rearranging, blue and silver, scientific visualization, luminous, cinematic",
+      "duration_s": 6.5,
+      "motion": "pan_left",
+      "caption": "A trained crystal",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "This strange memory does real work. Nitinol springs open blocked arteries from inside the body, flexes eyeglass frames back into shape, and even folds up satellites that unfurl once they reach the cold of space.",
+      "image_prompt": "close up of a delicate mesh medical stent expanding, precise metallic filaments, clinical blue light, cinematic detail",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Memory that saves lives",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "We think of memory as something only minds possess. But locked inside the right metal is a kind of memory too, a shape it will always find its way back to, no matter how far you bend it.",
+      "image_prompt": "a straightened silver wire glinting on a dark reflective surface with soft rim light, elegant, minimal, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Shape it never forgets",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-05T08:14:56.236987+00:00",
+      "ended_at": "2026-08-05T08:14:58.045973+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-05T08:14:58.046446+00:00",
+      "ended_at": "2026-08-05T08:15:18.115531+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-05T08:15:18.116025+00:00",
+      "ended_at": "2026-08-05T08:15:19.222802+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Server error '500 Internal Server Error' for url 'https://image.pollinations.ai/prompt/a%20thin%20silver%20metal%20wire%20bent%20into%20a%20tangle%20resting%20on%20a%20clean%20dark%20surface%20under%20soft%20studio%20light%2C%20high%20detail%2C%20cinematic%20macro?width=1920&height=1080&nologo=true&model=flux&seed=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "started_at": "2026-08-05T08:15:19.223287+00:00",
+      "ended_at": "2026-08-05T08:16:05.200410+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
