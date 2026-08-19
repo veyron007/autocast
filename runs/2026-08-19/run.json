@@ -1,0 +1,200 @@
+{
+  "run_id": "2026-08-19",
+  "schema_version": 1,
+  "created_at": "2026-08-19T06:25:47.194994+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The 2,000-Year-Old Computer Found in a Shipwreck",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer. Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It was a hand-cranked machine, built by ancient Greeks to model the motion of the heavens themselves. Turn its crank and it tracked the sun and moon, predicted their phases, even forecast eclipses years in advance. Nothing this intricate would appear again anywhere for over a thousand years. We assume our ancestors were simpler than us. But someone, twenty centuries ago, held the whole sky inside a box of gears. And then that knowledge vanished into the sea.",
+    "word_count": 123,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer.",
+      "image_prompt": "corroded bronze gear fragment encrusted with sea deposits on a dark surface, mysterious, museum lighting, cinematic close up",
+      "duration_s": 11.826,
+      "motion": "zoom_in",
+      "caption": "A lump of bronze",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 11.826
+    },
+    {
+      "idx": 1,
+      "narration": "Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It was a hand-cranked machine, built by ancient Greeks to model the motion of the heavens themselves.",
+      "image_prompt": "intricate interlocking ancient bronze gears in extreme detail, glowing golden light, mechanical, cinematic macro",
+      "duration_s": 12.258,
+      "motion": "pan_left",
+      "caption": "Dozens of gears",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 11.826,
+      "audio_end_s": 24.084
+    },
+    {
+      "idx": 2,
+      "narration": "Turn its crank and it tracked the sun and moon, predicted their phases, even forecast eclipses years in advance. Nothing this intricate would appear again anywhere for over a thousand years.",
+      "image_prompt": "reconstruction of the antikythera mechanism with rotating dials and pointers, glowing bronze, dramatic, cinematic",
+      "duration_s": 12.738,
+      "motion": "zoom_in",
+      "caption": "It predicted eclipses",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 24.084,
+      "audio_end_s": 36.822
+    },
+    {
+      "idx": 3,
+      "narration": "We assume our ancestors were simpler than us. But someone, twenty centuries ago, held the whole sky inside a box of gears. And then that knowledge vanished into the sea.",
+      "image_prompt": "an ancient bronze mechanism sinking slowly through deep blue seawater pierced by shafts of light, haunting, cinematic",
+      "duration_s": 11.106,
+      "motion": "zoom_out",
+      "caption": "The sky in a box",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 36.822,
+      "audio_end_s": 47.928
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 47.928,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 47.928,
+    "size_bytes": 8088238
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "The 2,000-Year-Old Computer Found in a Shipwreck",
+    "description": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer. Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "2,000-year-old",
+      "computer",
+      "found",
+      "shipwreck"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:25:47.195423+00:00",
+      "ended_at": "2026-08-19T06:25:49.073638+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:25:49.074205+00:00",
+      "ended_at": "2026-08-19T06:26:09.132623+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:26:09.133034+00:00",
+      "ended_at": "2026-08-19T06:26:10.591868+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:26:10.592368+00:00",
+      "ended_at": "2026-08-19T06:26:12.958471+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:26:12.958986+00:00",
+      "ended_at": "2026-08-19T06:26:26.829340+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:26:26.829923+00:00",
+      "ended_at": "2026-08-19T06:26:27.239414+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:26:27.239993+00:00",
+      "ended_at": "2026-08-19T06:27:53.888998+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-19T06:27:53.889573+00:00",
+      "ended_at": "2026-08-19T06:27:54.098498+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-08-19T06:27:54.099045+00:00",
+      "ended_at": "2026-08-19T06:27:54.099383+00:00"
+    }
+  ]
+}
