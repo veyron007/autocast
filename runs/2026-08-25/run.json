@@ -1,0 +1,200 @@
+{
+  "run_id": "2026-08-25",
+  "schema_version": 1,
+  "created_at": "2026-08-25T06:25:51.766361+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Metal That Remembers Its Shape",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged. The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure the atoms hold two arrangements, and a little heat snaps them back from the bent shape to the one they were trained to keep. This strange memory does real work. Nitinol springs open blocked arteries from inside the body, flexes eyeglass frames back into shape, and even folds up satellites that unfurl once they reach the cold of space. We think of memory as something only minds possess. But locked inside the right metal is a kind of memory too, a shape it will always find its way back to, no matter how far you bend it.",
+    "word_count": 148,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged.",
+      "image_prompt": "a thin silver metal wire bent into a tangle resting on a clean dark surface under soft studio light, high detail, cinematic macro",
+      "duration_s": 12.57,
+      "motion": "zoom_in",
+      "caption": "Metal that remembers",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 12.57
+    },
+    {
+      "idx": 1,
+      "narration": "The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure the atoms hold two arrangements, and a little heat snaps them back from the bent shape to the one they were trained to keep.",
+      "image_prompt": "abstract glowing crystalline lattice of atoms rearranging, blue and silver, scientific visualization, luminous, cinematic",
+      "duration_s": 13.602,
+      "motion": "pan_left",
+      "caption": "A trained crystal",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 12.57,
+      "audio_end_s": 26.172
+    },
+    {
+      "idx": 2,
+      "narration": "This strange memory does real work. Nitinol springs open blocked arteries from inside the body, flexes eyeglass frames back into shape, and even folds up satellites that unfurl once they reach the cold of space.",
+      "image_prompt": "close up of a delicate mesh medical stent expanding, precise metallic filaments, clinical blue light, cinematic detail",
+      "duration_s": 14.394,
+      "motion": "zoom_in",
+      "caption": "Memory that saves lives",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 26.172,
+      "audio_end_s": 40.566
+    },
+    {
+      "idx": 3,
+      "narration": "We think of memory as something only minds possess. But locked inside the right metal is a kind of memory too, a shape it will always find its way back to, no matter how far you bend it.",
+      "image_prompt": "a straightened silver wire glinting on a dark reflective surface with soft rim light, elegant, minimal, cinematic",
+      "duration_s": 11.514,
+      "motion": "zoom_out",
+      "caption": "Shape it never forgets",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 40.566,
+      "audio_end_s": 52.08
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 52.08,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 52.08,
+    "size_bytes": 6201529
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "The Metal That Remembers Its Shape",
+    "description": "Bend this metal wire, twist it, crumple it into a knot. Then warm it gently, and it will untangle itself and spring back to its exact original shape, as if it remembered where it belonged. The secret is an alloy of nickel and titanium called nitinol. Deep in its crystal structure\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "metal",
+      "remembers",
+      "its",
+      "shape"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:25:51.766755+00:00",
+      "ended_at": "2026-08-25T06:25:53.505841+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:25:53.506240+00:00",
+      "ended_at": "2026-08-25T06:25:54.748831+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:25:54.749185+00:00",
+      "ended_at": "2026-08-25T06:25:55.991045+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:25:55.991530+00:00",
+      "ended_at": "2026-08-25T06:28:12.937429+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:28:12.937932+00:00",
+      "ended_at": "2026-08-25T06:28:39.205878+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:28:39.206403+00:00",
+      "ended_at": "2026-08-25T06:28:39.606921+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:28:39.607405+00:00",
+      "ended_at": "2026-08-25T06:29:52.107256+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-25T06:29:52.107872+00:00",
+      "ended_at": "2026-08-25T06:29:52.424834+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-08-25T06:29:52.425287+00:00",
+      "ended_at": "2026-08-25T06:29:52.426105+00:00"
+    }
+  ]
+}
