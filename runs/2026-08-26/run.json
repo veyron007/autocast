@@ -1,0 +1,201 @@
+{
+  "run_id": "2026-08-26",
+  "schema_version": 1,
+  "created_at": "2026-08-26T06:29:14.906775+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Birds That Sleep While They Fly",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep? Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The recordings revealed something remarkable: the birds really do sleep, in the air, while still soaring on the wind. They sleep in tiny bursts of just seconds, often resting only half the brain at a time while the other half stays alert. Sometimes, riding a rising current, they even shut down both halves at once. In a whole month at sea, they sleep barely forty minutes a day, a fraction of what they take on land. High above the waves, these birds have quietly mastered a trick that still leaves scientists amazed.",
+    "word_count": 138,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep?",
+      "image_prompt": "a lone seabird gliding high over an endless open ocean at golden hour, tiny against vast sky, serene, cinematic wide shot",
+      "duration_s": 11.682,
+      "motion": "zoom_in",
+      "caption": "Weeks without landing",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 11.682
+    },
+    {
+      "idx": 1,
+      "narration": "Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The recordings revealed something remarkable: the birds really do sleep, in the air, while still soaring on the wind.",
+      "image_prompt": "great frigatebird with a wide black wingspan soaring against a dramatic cloud-streaked sky, majestic, cinematic",
+      "duration_s": 14.13,
+      "motion": "pan_right",
+      "caption": "Sleeping on the wing",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 11.682,
+      "audio_end_s": 25.812
+    },
+    {
+      "idx": 2,
+      "narration": "They sleep in tiny bursts of just seconds, often resting only half the brain at a time while the other half stays alert. Sometimes, riding a rising current, they even shut down both halves at once.",
+      "image_prompt": "close up of a frigatebird's eye and head in soft focus against a blurred bright sky, intimate, detailed, cinematic",
+      "duration_s": 13.146,
+      "motion": "zoom_in",
+      "caption": "Half a brain awake",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 25.812,
+      "audio_end_s": 38.958
+    },
+    {
+      "idx": 3,
+      "narration": "In a whole month at sea, they sleep barely forty minutes a day, a fraction of what they take on land. High above the waves, these birds have quietly mastered a trick that still leaves scientists amazed.",
+      "image_prompt": "silhouetted seabird drifting across a vast twilight sky above a calm ocean, peaceful, expansive, cinematic",
+      "duration_s": 12.45,
+      "motion": "zoom_out",
+      "caption": "Masters of the sky",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 38.958,
+      "audio_end_s": 51.408
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 51.408,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 51.408,
+    "size_bytes": 6042389
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "The Birds That Sleep While They Fly",
+    "description": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep? Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The reco\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "birds",
+      "sleep",
+      "while",
+      "they",
+      "fly"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:14.907192+00:00",
+      "ended_at": "2026-08-26T06:29:16.435880+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:16.436533+00:00",
+      "ended_at": "2026-08-26T06:29:36.484471+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:36.485025+00:00",
+      "ended_at": "2026-08-26T06:29:37.575637+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:37.576322+00:00",
+      "ended_at": "2026-08-26T06:29:39.617880+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:39.618422+00:00",
+      "ended_at": "2026-08-26T06:29:57.841230+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:57.841890+00:00",
+      "ended_at": "2026-08-26T06:29:58.325134+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:29:58.325797+00:00",
+      "ended_at": "2026-08-26T06:31:25.588667+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-08-26T06:31:25.589256+00:00",
+      "ended_at": "2026-08-26T06:31:25.784705+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-08-26T06:31:25.785268+00:00",
+      "ended_at": "2026-08-26T06:31:25.785670+00:00"
+    }
+  ]
+}
