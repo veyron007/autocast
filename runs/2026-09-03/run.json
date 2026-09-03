@@ -1,0 +1,201 @@
+{
+  "run_id": "2026-09-03",
+  "schema_version": 1,
+  "created_at": "2026-09-03T10:18:54.480907+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "How Medieval Cities Handled Their Waste",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Picture a medieval city: fifty thousand people packed inside stone walls, and not a single sewer. The most pressing question wasn't war or plague. It was simply, where does it all go? The answer was a grim economy. Households used cesspits dug beneath their homes. When they filled, the night-soil men, the gong farmers, emptied them by hand after dark and hauled the waste beyond the walls. It was dangerous, low-paid, and constant. When the system failed, waste ran into the same rivers people drank from, and the diseases that followed could empty a city faster than any siege. Every flush you take today traces back to these grim lessons. Modern sanitation was never a sudden invention. It was built, painfully, on centuries of getting it wrong.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Picture a medieval city: fifty thousand people packed inside stone walls, and not a single sewer. The most pressing question wasn't war or plague. It was simply, where does it all go?",
+      "image_prompt": "crowded medieval european city street at dusk, timber houses leaning overhead, muddy lane, atmospheric haze, cinematic",
+      "duration_s": 11.922,
+      "motion": "pan_right",
+      "caption": "50,000 people, no sewers",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 11.922
+    },
+    {
+      "idx": 1,
+      "narration": "The answer was a grim economy. Households used cesspits dug beneath their homes. When they filled, the night-soil men, the gong farmers, emptied them by hand after dark and hauled the waste beyond the walls.",
+      "image_prompt": "lantern-lit medieval alley at night, a cloaked figure with a cart and shovel, moody, candlelight, cinematic",
+      "duration_s": 13.218,
+      "motion": "zoom_in",
+      "caption": "The gong farmers",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 11.922,
+      "audio_end_s": 25.14
+    },
+    {
+      "idx": 2,
+      "narration": "It was dangerous, low-paid, and constant. When the system failed, waste ran into the same rivers people drank from, and the diseases that followed could empty a city faster than any siege.",
+      "image_prompt": "murky medieval river running past stone city walls, refuse floating, grey overcast light, grim, cinematic",
+      "duration_s": 13.026,
+      "motion": "pan_left",
+      "caption": "When it failed",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 25.14,
+      "audio_end_s": 38.166
+    },
+    {
+      "idx": 3,
+      "narration": "Every flush you take today traces back to these grim lessons. Modern sanitation was never a sudden invention. It was built, painfully, on centuries of getting it wrong.",
+      "image_prompt": "modern water treatment plant with geometric tanks at blue hour, aerial view, crisp, cinematic",
+      "duration_s": 11.61,
+      "motion": "zoom_out",
+      "caption": "The cost of clean",
+      "image_path": "assets/shot_003.png",
+      "clip_path": "assets/shot_003.mp4",
+      "audio_start_s": 38.166,
+      "audio_end_s": 49.776
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 49.776,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 49.776,
+    "size_bytes": 7170710
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "How Medieval Cities Handled Their Waste",
+    "description": "Picture a medieval city: fifty thousand people packed inside stone walls, and not a single sewer. The most pressing question wasn't war or plague. It was simply, where does it all go? The answer was a grim economy. Households used cesspits dug beneath their homes. When they fille\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "medieval",
+      "cities",
+      "handled",
+      "their",
+      "waste"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:18:54.481367+00:00",
+      "ended_at": "2026-09-03T10:18:56.109947+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:18:56.110547+00:00",
+      "ended_at": "2026-09-03T10:19:16.151291+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:19:16.151791+00:00",
+      "ended_at": "2026-09-03T10:19:16.957554+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:19:16.958164+00:00",
+      "ended_at": "2026-09-03T10:19:18.755071+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:19:18.755662+00:00",
+      "ended_at": "2026-09-03T10:19:34.859119+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:19:34.859785+00:00",
+      "ended_at": "2026-09-03T10:19:35.250048+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:19:35.250727+00:00",
+      "ended_at": "2026-09-03T10:21:05.273952+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-03T10:21:05.274574+00:00",
+      "ended_at": "2026-09-03T10:21:05.492811+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-09-03T10:21:05.493440+00:00",
+      "ended_at": "2026-09-03T10:21:05.493850+00:00"
+    }
+  ]
+}
