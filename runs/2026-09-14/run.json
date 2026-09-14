@@ -1,0 +1,192 @@
+{
+  "run_id": "2026-09-14",
+  "schema_version": 1,
+  "created_at": "2026-09-14T11:10:12.378767+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The API key used for this request has reached its budget. Please [raise the key budget](https://ente",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "pollinations-openai"
+  },
+  "script": {
+    "full_text": "The API key used for this request has reached its budget. Please [raise the key budget](https://ente. Some stories hide in plain sight, waiting for someone to finally look a little closer. Trace it back to the very beginning, and a familiar thing starts to look strange and new. By the end, you will never quite see it the same way again.",
+    "word_count": 61,
+    "provider": "template-fallback"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "The API key used for this request has reached its budget. Please [raise the key budget](https://ente. Some stories hide in plain sight, waiting for someone to finally look a little closer.",
+      "image_prompt": "atmospheric wide establishing shot at soft golden light, film grain, cinematic, moody",
+      "duration_s": 14.97,
+      "motion": "zoom_in",
+      "caption": "A closer look",
+      "image_path": "assets/shot_000.png",
+      "clip_path": "assets/shot_000.mp4",
+      "audio_start_s": 0.0,
+      "audio_end_s": 14.97
+    },
+    {
+      "idx": 1,
+      "narration": "Trace it back to the very beginning, and a familiar thing starts to look strange and new.",
+      "image_prompt": "extreme close up of an aged, textured surface, moody, high detail, cinematic",
+      "duration_s": 5.802,
+      "motion": "pan_right",
+      "caption": "Back to the start",
+      "image_path": "assets/shot_001.png",
+      "clip_path": "assets/shot_001.mp4",
+      "audio_start_s": 14.97,
+      "audio_end_s": 20.772
+    },
+    {
+      "idx": 2,
+      "narration": "By the end, you will never quite see it the same way again.",
+      "image_prompt": "slow reveal of a wide landscape at golden hour, hopeful, cinematic, expansive",
+      "duration_s": 3.978,
+      "motion": "zoom_out",
+      "caption": "See it anew",
+      "image_path": "assets/shot_002.png",
+      "clip_path": "assets/shot_002.mp4",
+      "audio_start_s": 20.772,
+      "audio_end_s": 24.75
+    }
+  ],
+  "audio": {
+    "voice_path": "assets/voice.wav",
+    "duration_s": 24.75,
+    "word_timings_path": null,
+    "provider": "edge-tts"
+  },
+  "assets": {
+    "music_path": "assets/music.wav",
+    "music_source": "synth-ambient-cc0",
+    "captions_path": "assets/captions.ass",
+    "stock_paths": [],
+    "license_manifest": [
+      {
+        "asset": "music.wav",
+        "license": "CC0-1.0",
+        "attribution": false
+      }
+    ]
+  },
+  "video": {
+    "final_path": "assets/final.mp4",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_s": 24.75,
+    "size_bytes": 2583757
+  },
+  "thumbnail": {
+    "path": "assets/thumb.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  "upload": {
+    "title": "The API key used for this request has reached its budget. Please [raise the key budget](https://ente",
+    "description": "The API key used for this request has reached its budget. Please [raise the key budget](https://ente. Some stories hide in plain sight, waiting for someone to finally look a little closer. Trace it back to the very beginning, and a familiar thing starts to look strange and new. B\n\nThis video contains AI-generated visuals and narration.\nMusic & stock credits are listed in the license manifest for this run.",
+    "tags": [
+      "api",
+      "key",
+      "used",
+      "for",
+      "this",
+      "request",
+      "has",
+      "reached"
+    ],
+    "privacy": "private",
+    "ai_disclosure": true,
+    "youtube_video_id": null,
+    "uploaded_at": null
+  },
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:12.379192+00:00",
+      "ended_at": "2026-09-14T11:10:14.422566+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:14.423136+00:00",
+      "ended_at": "2026-09-14T11:10:34.471594+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:34.472061+00:00",
+      "ended_at": "2026-09-14T11:10:35.318607+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:35.319103+00:00",
+      "ended_at": "2026-09-14T11:10:36.461014+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "completed",
+      "provider_used": "edge-tts",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:36.461563+00:00",
+      "ended_at": "2026-09-14T11:10:38.234289+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:38.235078+00:00",
+      "ended_at": "2026-09-14T11:10:38.499078+00:00"
+    },
+    {
+      "name": "video",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:10:38.499741+00:00",
+      "ended_at": "2026-09-14T11:11:19.370188+00:00"
+    },
+    {
+      "name": "thumbnail",
+      "status": "completed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-09-14T11:11:19.370775+00:00",
+      "ended_at": "2026-09-14T11:11:19.588469+00:00"
+    },
+    {
+      "name": "upload",
+      "status": "skipped",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "no YouTube credentials (YT_CLIENT_ID/SECRET/REFRESH_TOKEN) — video rendered locally, publishing skipped. See README human-dependency gate.",
+      "started_at": "2026-09-14T11:11:19.589040+00:00",
+      "ended_at": "2026-09-14T11:11:19.589460+00:00"
+    }
+  ]
+}
