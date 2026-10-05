@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-05",
+  "schema_version": 1,
+  "created_at": "2026-10-05T12:56:22.401234+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Birds That Sleep While They Fly",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep? Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The recordings revealed something remarkable: the birds really do sleep, in the air, while still soaring on the wind. They sleep in tiny bursts of just seconds, often resting only half the brain at a time while the other half stays alert. Sometimes, riding a rising current, they even shut down both halves at once. In a whole month at sea, they sleep barely forty minutes a day, a fraction of what they take on land. High above the waves, these birds have quietly mastered a trick that still leaves scientists amazed.",
+    "word_count": 138,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Some seabirds stay in the air for weeks, even months, without ever touching down. Which raises an impossible question: if they never land, then when on earth do they ever sleep?",
+      "image_prompt": "a lone seabird gliding high over an endless open ocean at golden hour, tiny against vast sky, serene, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Weeks without landing",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Scientists strapped tiny brain monitors to great frigatebirds and sent them out over the sea. The recordings revealed something remarkable: the birds really do sleep, in the air, while still soaring on the wind.",
+      "image_prompt": "great frigatebird with a wide black wingspan soaring against a dramatic cloud-streaked sky, majestic, cinematic",
+      "duration_s": 6.5,
+      "motion": "pan_right",
+      "caption": "Sleeping on the wing",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "They sleep in tiny bursts of just seconds, often resting only half the brain at a time while the other half stays alert. Sometimes, riding a rising current, they even shut down both halves at once.",
+      "image_prompt": "close up of a frigatebird's eye and head in soft focus against a blurred bright sky, intimate, detailed, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Half a brain awake",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "In a whole month at sea, they sleep barely forty minutes a day, a fraction of what they take on land. High above the waves, these birds have quietly mastered a trick that still leaves scientists amazed.",
+      "image_prompt": "silhouetted seabird drifting across a vast twilight sky above a calm ocean, peaceful, expansive, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Masters of the sky",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-05T12:56:22.401582+00:00",
+      "ended_at": "2026-10-05T12:56:42.729741+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-05T12:56:42.730359+00:00",
+      "ended_at": "2026-10-05T12:56:43.762081+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-05T12:56:43.762747+00:00",
+      "ended_at": "2026-10-05T12:56:44.886442+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/great%20frigatebird%20with%20a%20wide%20black%20wingspan%20soaring%20against%20a%20dramatic%20cloud-streaked%20sky%2C%20majestic%2C%20cinematic?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-05T12:56:44.887056+00:00",
+      "ended_at": "2026-10-05T12:56:51.319779+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}

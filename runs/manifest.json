@@ -1,5 +1,14 @@
 [
   {
+    "run_id": "2026-10-05",
+    "title": "The Birds That Sleep While They Fly",
+    "status": "failed",
+    "youtube_video_id": null,
+    "privacy": null,
+    "thumb_path": null,
+    "created_at": "2026-10-05T12:56:22.401234+00:00"
+  },
+  {
     "run_id": "2026-10-04",
     "title": "The Metal That Remembers Its Shape",
     "status": "failed",
