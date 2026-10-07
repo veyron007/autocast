@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-07",
+  "schema_version": 1,
+  "created_at": "2026-10-07T12:15:06.211169+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Sailors Who Crossed an Ocean Without Maps",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Long before compasses reached the Pacific, Polynesian navigators sailed thousands of miles across open ocean to find tiny islands, with no maps, no instruments, and no sight of land for weeks. Instead, they read the sky. They memorized where dozens of stars rose and set, using them as a great compass wheeling overhead, steering toward the point on the horizon where the right star would climb. When clouds hid the stars, they read the sea itself, feeling the deep swells roll beneath the hull and watching how the waves bent around islands still far beyond the edge of sight. With this living knowledge they settled a triangle of islands larger than any empire, from Hawaii to New Zealand. Modern voyages have proven it still works, guided by nothing but sky, wind, and water.",
+    "word_count": 133,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Long before compasses reached the Pacific, Polynesian navigators sailed thousands of miles across open ocean to find tiny islands, with no maps, no instruments, and no sight of land for weeks.",
+      "image_prompt": "a traditional polynesian double-hulled sailing canoe on a vast open ocean at sunrise, tiny against the horizon, majestic, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "No maps, no compass",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Instead, they read the sky. They memorized where dozens of stars rose and set, using them as a great compass wheeling overhead, steering toward the point on the horizon where the right star would climb.",
+      "image_prompt": "night sky brimming with brilliant stars arcing over a calm dark ocean, the milky way mirrored on the water, serene, cinematic",
+      "duration_s": 7.0,
+      "motion": "pan_left",
+      "caption": "A compass of stars",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "When clouds hid the stars, they read the sea itself, feeling the deep swells roll beneath the hull and watching how the waves bent around islands still far beyond the edge of sight.",
+      "image_prompt": "close up of ocean swells and rolling waves catching low golden light, richly textured water surface, dynamic, cinematic detail",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "Reading the waves",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "With this living knowledge they settled a triangle of islands larger than any empire, from Hawaii to New Zealand. Modern voyages have proven it still works, guided by nothing but sky, wind, and water.",
+      "image_prompt": "polynesian voyaging canoe approaching a lush green island at golden hour, palm-lined shore ahead, hopeful, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_out",
+      "caption": "An ocean mapped by memory",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-07T12:15:06.211572+00:00",
+      "ended_at": "2026-10-07T12:15:26.861958+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-07T12:15:26.862754+00:00",
+      "ended_at": "2026-10-07T12:15:27.811091+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-07T12:15:27.811789+00:00",
+      "ended_at": "2026-10-07T12:15:28.824472+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/night%20sky%20brimming%20with%20brilliant%20stars%20arcing%20over%20a%20calm%20dark%20ocean%2C%20the%20milky%20way%20mirrored%20on%20the%20water%2C%20serene%2C%20cinematic?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-07T12:15:28.825267+00:00",
+      "ended_at": "2026-10-07T12:15:34.423935+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
