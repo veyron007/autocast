@@ -1,0 +1,147 @@
+{
+  "run_id": "2026-10-10",
+  "schema_version": 1,
+  "created_at": "2026-10-10T11:32:22.358474+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Jon Bernthal's Quest: The Day the Mediterranean Ran Dry",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "pollinations-openai"
+  },
+  "script": {
+    "full_text": "Jon Bernthal's Quest: The Day the Mediterranean Ran Dry. Some stories hide in plain sight, waiting for someone to finally look a little closer. Trace it back to the very beginning, and a familiar thing starts to look strange and new. By the end, you will never quite see it the same way again.",
+    "word_count": 54,
+    "provider": "template-fallback"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Jon Bernthal's Quest: The Day the Mediterranean Ran Dry. Some stories hide in plain sight, waiting for someone to finally look a little closer.",
+      "image_prompt": "atmospheric wide establishing shot at soft golden light, film grain, cinematic, moody",
+      "duration_s": 5.5,
+      "motion": "zoom_in",
+      "caption": "A closer look",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Trace it back to the very beginning, and a familiar thing starts to look strange and new.",
+      "image_prompt": "extreme close up of an aged, textured surface, moody, high detail, cinematic",
+      "duration_s": 5.5,
+      "motion": "pan_right",
+      "caption": "Back to the start",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "By the end, you will never quite see it the same way again.",
+      "image_prompt": "slow reveal of a wide landscape at golden hour, hopeful, cinematic, expansive",
+      "duration_s": 5.5,
+      "motion": "zoom_out",
+      "caption": "See it anew",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-10T11:32:22.358927+00:00",
+      "ended_at": "2026-10-10T11:32:34.716999+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-10T11:32:34.717639+00:00",
+      "ended_at": "2026-10-10T11:32:36.342088+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-10T11:32:36.342747+00:00",
+      "ended_at": "2026-10-10T11:32:37.511634+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/slow%20reveal%20of%20a%20wide%20landscape%20at%20golden%20hour%2C%20hopeful%2C%20cinematic%2C%20expansive?width=1920&height=1080&nologo=true&model=flux&seed=1002'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-10T11:32:37.512242+00:00",
+      "ended_at": "2026-10-10T11:32:41.947294+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
