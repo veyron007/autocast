@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-11",
+  "schema_version": 1,
+  "created_at": "2026-10-11T11:46:04.254156+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Why the Roman Concrete Recipe Was Lost",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Along the coast of Italy, Roman harbor walls have stood in crashing seawater for two thousand years. Modern concrete piers poured beside them are already crumbling after fifty. How? The answer was hidden in the mix. Roman builders folded in chunks of quicklime and volcanic ash, then blended it scorching hot, leaving tiny white reservoirs of self-repair locked inside the stone. When a crack forms and water seeps in, that lime dissolves and recrystallizes, sealing the gap before it can spread. The concrete literally heals itself. But the recipe was never written down. As Rome fell, the knowledge passed away with its engineers, and for over a thousand years it was simply lost. Only now, in modern labs, are we relearning what the Romans somehow already knew.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Along the coast of Italy, Roman harbor walls have stood in crashing seawater for two thousand years. Modern concrete piers poured beside them are already crumbling after fifty. How?",
+      "image_prompt": "ancient roman harbor breakwater in crashing turquoise sea at golden hour, massive weathered stone, cinematic wide shot, dramatic light",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "2,000 years in the sea",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "The answer was hidden in the mix. Roman builders folded in chunks of quicklime and volcanic ash, then blended it scorching hot, leaving tiny white reservoirs of self-repair locked inside the stone.",
+      "image_prompt": "extreme close up of an ancient roman concrete cross-section showing bright white lime clasts, textured, high detail, museum lighting",
+      "duration_s": 6.5,
+      "motion": "pan_right",
+      "caption": "A self-healing mix",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "When a crack forms and water seeps in, that lime dissolves and recrystallizes, sealing the gap before it can spread. The concrete literally heals itself. But the recipe was never written down.",
+      "image_prompt": "macro view of a hairline crack in pale stone slowly filling with white crystals, scientific, softly glowing, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Cracks that seal themselves",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "As Rome fell, the knowledge passed away with its engineers, and for over a thousand years it was simply lost. Only now, in modern labs, are we relearning what the Romans somehow already knew.",
+      "image_prompt": "modern materials science laboratory with a glowing concrete sample under blue light, futuristic, clean, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_out",
+      "caption": "Rediscovered at last",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-11T11:46:04.254578+00:00",
+      "ended_at": "2026-10-11T11:46:24.764282+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-11T11:46:24.765147+00:00",
+      "ended_at": "2026-10-11T11:46:26.061572+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-11T11:46:26.062376+00:00",
+      "ended_at": "2026-10-11T11:46:27.064743+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/extreme%20close%20up%20of%20an%20ancient%20roman%20concrete%20cross-section%20showing%20bright%20white%20lime%20clasts%2C%20textured%2C%20high%20detail%2C%20museum%20lighting?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-11T11:46:27.065446+00:00",
+      "ended_at": "2026-10-11T11:46:33.942761+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
