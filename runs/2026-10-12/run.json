@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-12",
+  "schema_version": 1,
+  "created_at": "2026-10-12T13:50:45.539687+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Deep-Sea Creatures That Glow in the Dark",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Descend past a thousand meters and the sunlight vanishes completely. Yet this crushing darkness is the most lit-up place on Earth, where nine out of ten animals make their own light. It is a chemical trick called bioluminescence. A molecule named luciferin reacts with oxygen, and the energy escapes not as heat, but as cold living light, glowing blue-green through the deep. Every glow has a purpose. Anglerfish dangle a lure to trap prey. Others flash to find a mate, or erase their own shadow from below in a vanishing act called counter-illumination. By borrowing these very molecules, scientists now light up living cells, track diseases, and watch tumors grow. The deep sea's quiet glow is quietly rewriting modern medicine.",
+    "word_count": 120,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Descend past a thousand meters and the sunlight vanishes completely. Yet this crushing darkness is the most lit-up place on Earth, where nine out of ten animals make their own light.",
+      "image_prompt": "deep ocean midnight zone, pitch black water pierced by tiny points of blue bioluminescence, eerie, atmospheric, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "The midnight zone",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "It is a chemical trick called bioluminescence. A molecule named luciferin reacts with oxygen, and the energy escapes not as heat, but as cold living light, glowing blue-green through the deep.",
+      "image_prompt": "macro shot of a translucent jellyfish pulsing electric blue in dark water, bioluminescent, luminous, cinematic detail",
+      "duration_s": 6.5,
+      "motion": "pan_left",
+      "caption": "Living light",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "Every glow has a purpose. Anglerfish dangle a lure to trap prey. Others flash to find a mate, or erase their own shadow from below in a vanishing act called counter-illumination.",
+      "image_prompt": "deep sea anglerfish with a single glowing lure hovering in black water, menacing, highly detailed, cinematic wildlife shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "A reason to glow",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "By borrowing these very molecules, scientists now light up living cells, track diseases, and watch tumors grow. The deep sea's quiet glow is quietly rewriting modern medicine.",
+      "image_prompt": "microscope image of living cells glowing green against a black field, scientific, luminous, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "From abyss to lab",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-12T13:50:45.540165+00:00",
+      "ended_at": "2026-10-12T13:51:06.109272+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-12T13:51:06.110106+00:00",
+      "ended_at": "2026-10-12T13:51:06.410795+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-12T13:51:06.411547+00:00",
+      "ended_at": "2026-10-12T13:51:06.725635+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/macro%20shot%20of%20a%20translucent%20jellyfish%20pulsing%20electric%20blue%20in%20dark%20water%2C%20bioluminescent%2C%20luminous%2C%20cinematic%20detail?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-12T13:51:06.726559+00:00",
+      "ended_at": "2026-10-12T13:51:15.845696+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
