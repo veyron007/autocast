@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-14",
+  "schema_version": 1,
+  "created_at": "2026-10-14T10:48:08.585710+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "States Power Grid Collapse vs. Ancient Metal That Never Loses Shape",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "pollinations-openai"
+  },
+  "script": {
+    "full_text": "States Power Grid Collapse vs. Ancient Metal That Never Loses Shape. Some stories hide in plain sight, waiting for someone to finally look a little closer. Trace it back to the very beginning, and a familiar thing starts to look strange and new. By the end, you will never quite see it the same way again.",
+    "word_count": 56,
+    "provider": "template-fallback"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "States Power Grid Collapse vs. Ancient Metal That Never Loses Shape.",
+      "image_prompt": "A split‑screen shot: one side a fractured electrical grid map in neon blue, the other a gleaming bronze statue of Athena, both overlaid with a subtle overlay of static.",
+      "duration_s": 5.0,
+      "motion": "zoom_in",
+      "caption": "Power vs. Metal",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Some stories hide in plain sight, waiting for someone to finally look a little closer.",
+      "image_prompt": "A close‑up of a rusted metal street sign on a bustling city corner, sun glinting off its surface, with a subtle reflection of a hidden message in the glass of a nearby shop window.",
+      "duration_s": 5.0,
+      "motion": "pan_right",
+      "caption": "Hidden in Plain Sight",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "Trace it back to the very beginning, and a familiar thing starts to look strange and new.",
+      "image_prompt": "A hand holding a magnifying glass over a worn bronze coin, tracing its worn edges, with a digital overlay tracing a path back to a raw metal ingot in a smelter.",
+      "duration_s": 5.0,
+      "motion": "pan_left",
+      "caption": "Trace the Beginning",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "By the end, you will never quite see it the same way again.",
+      "image_prompt": "A wide shot of a person standing before a polished metal sculpture that subtly morphs into a modern abstract form, their reflection distorted in the glass.",
+      "duration_s": 5.0,
+      "motion": "zoom_out",
+      "caption": "Never the Same",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-14T10:48:08.586140+00:00",
+      "ended_at": "2026-10-14T10:48:27.110227+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-14T10:48:27.111035+00:00",
+      "ended_at": "2026-10-14T10:48:47.157118+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-14T10:48:47.157790+00:00",
+      "ended_at": "2026-10-14T10:49:05.099103+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/A%20close%E2%80%91up%20of%20a%20rusted%20metal%20street%20sign%20on%20a%20bustling%20city%20corner%2C%20sun%20glinting%20off%20its%20surface%2C%20with%20a%20subtle%20reflection%20of%20a%20hidden%20message%20in%20the%20glass%20of%20a%20nearby%20shop%20window.?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-14T10:49:05.099791+00:00",
+      "ended_at": "2026-10-14T10:49:12.367851+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
