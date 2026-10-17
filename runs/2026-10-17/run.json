@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-17",
+  "schema_version": 1,
+  "created_at": "2026-10-17T09:52:10.576032+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "Why Honey Is the Only Food That Never Spoils",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How? Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria that need moisture simply dry out and die before they can ever take hold. The bees add the final touch. An enzyme from their bodies releases tiny amounts of hydrogen peroxide, and the honey itself is acidic. Together they form a natural preservative almost nothing survives. So long as it stays sealed and dry, a jar of honey can outlast whole empires. The next spoonful you eat may well still be sweet a thousand years from now.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Archaeologists digging in an Egyptian tomb once found a sealed jar of honey over three thousand years old. They tasted it, and it was still perfectly good to eat. How?",
+      "image_prompt": "ancient sealed ceramic jar of golden honey inside an egyptian tomb lit by a single torch, dramatic, high detail, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "3,000 years old, still edible",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Honey is a near-perfect trap for the microbes that make food rot. It holds almost no free water, so bacteria that need moisture simply dry out and die before they can ever take hold.",
+      "image_prompt": "extreme macro of thick golden honey slowly dripping in a glistening ribbon, amber light, appetizing, cinematic detail",
+      "duration_s": 6.5,
+      "motion": "pan_right",
+      "caption": "No water, no rot",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "The bees add the final touch. An enzyme from their bodies releases tiny amounts of hydrogen peroxide, and the honey itself is acidic. Together they form a natural preservative almost nothing survives.",
+      "image_prompt": "honeybees clustered on a golden dripping honeycomb in warm sunlight, richly detailed, cinematic wildlife macro",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "The bees' secret",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "So long as it stays sealed and dry, a jar of honey can outlast whole empires. The next spoonful you eat may well still be sweet a thousand years from now.",
+      "image_prompt": "a spoon lifting glistening honey from an open jar in golden morning light, warm, inviting, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Sweeter than empires",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-17T09:52:10.576357+00:00",
+      "ended_at": "2026-10-17T09:52:30.898867+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-17T09:52:30.899485+00:00",
+      "ended_at": "2026-10-17T09:52:50.942809+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-17T09:52:50.943425+00:00",
+      "ended_at": "2026-10-17T09:53:09.726735+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/extreme%20macro%20of%20thick%20golden%20honey%20slowly%20dripping%20in%20a%20glistening%20ribbon%2C%20amber%20light%2C%20appetizing%2C%20cinematic%20detail?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-17T09:53:09.727376+00:00",
+      "ended_at": "2026-10-17T09:53:17.386339+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
