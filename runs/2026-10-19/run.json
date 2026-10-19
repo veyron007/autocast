@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-19",
+  "schema_version": 1,
+  "created_at": "2026-10-19T11:28:52.888367+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Explosion That Flattened a Siberian Forest",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "One morning in 1908, over a remote stretch of Siberia, the sky split open with a blast a thousand times stronger than an atomic bomb. And almost no one was there to see it. It leveled eighty million trees across an area larger than a city, snapping them flat like matchsticks, all pointing away from one empty center. And yet there was no crater at all. The cause was almost certainly a comet or asteroid that exploded miles above the ground, unleashing all of its energy as a searing blast of air before it ever touched the earth. Had it arrived just a few hours later, it might have erased a major city instead of empty forest. Tunguska is a quiet reminder that the sky is not always as still as it seems.",
+    "word_count": 133,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "One morning in 1908, over a remote stretch of Siberia, the sky split open with a blast a thousand times stronger than an atomic bomb. And almost no one was there to see it.",
+      "image_prompt": "vast siberian taiga forest at dawn with a blinding fireball streaking across the sky, dramatic, atmospheric, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "1908, Siberia",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "It leveled eighty million trees across an area larger than a city, snapping them flat like matchsticks, all pointing away from one empty center. And yet there was no crater at all.",
+      "image_prompt": "endless field of fallen trees lying flat in the same direction across a barren siberian landscape, grey light, eerie, cinematic aerial",
+      "duration_s": 7.0,
+      "motion": "pan_right",
+      "caption": "80 million trees, no crater",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "The cause was almost certainly a comet or asteroid that exploded miles above the ground, unleashing all of its energy as a searing blast of air before it ever touched the earth.",
+      "image_prompt": "a brilliant meteor exploding in a blinding airburst high above a dark forest, dramatic sky, luminous, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "An airburst",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "Had it arrived just a few hours later, it might have erased a major city instead of empty forest. Tunguska is a quiet reminder that the sky is not always as still as it seems.",
+      "image_prompt": "peaceful starry night sky over a silhouetted forest, calm but faintly ominous, deep blue, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "The sky isn't still",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-19T11:28:52.888693+00:00",
+      "ended_at": "2026-10-19T11:29:13.325777+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-19T11:29:13.326246+00:00",
+      "ended_at": "2026-10-19T11:29:13.588079+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-19T11:29:13.588529+00:00",
+      "ended_at": "2026-10-19T11:29:13.843344+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/endless%20field%20of%20fallen%20trees%20lying%20flat%20in%20the%20same%20direction%20across%20a%20barren%20siberian%20landscape%2C%20grey%20light%2C%20eerie%2C%20cinematic%20aerial?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-19T11:29:13.843862+00:00",
+      "ended_at": "2026-10-19T11:29:24.646933+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
