@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-20",
+  "schema_version": 1,
+  "created_at": "2026-10-20T10:34:57.789534+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Whale Whose Song No Other Whale Can Hear",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Somewhere in the Pacific swims a whale that has been calling out for decades, in a voice no other whale seems able to answer. Scientists came to call it the loneliest whale in the world. Most whales sing at a low, resonant pitch. But this one calls at fifty-two hertz, far higher than its own kind ever uses, like a voice speaking a language nobody else seems to know. For years, sonar arrays tracked its song across the ocean, always alone, never joined. No one knows if it is deaf, a rare hybrid, or simply one of a kind. It has never once been seen. Maybe it truly is alone, or maybe others hear it and we simply cannot. Either way, somewhere out there tonight, a single voice is still singing into the dark.",
+    "word_count": 134,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Somewhere in the Pacific swims a whale that has been calling out for decades, in a voice no other whale seems able to answer. Scientists came to call it the loneliest whale in the world.",
+      "image_prompt": "a lone whale silhouette in vast deep blue ocean with sunbeams streaming from above, solitary, atmospheric, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "The loneliest whale",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Most whales sing at a low, resonant pitch. But this one calls at fifty-two hertz, far higher than its own kind ever uses, like a voice speaking a language nobody else seems to know.",
+      "image_prompt": "abstract underwater sound waves rippling through dark blue water around a distant whale, glowing, ethereal, cinematic",
+      "duration_s": 7.0,
+      "motion": "pan_left",
+      "caption": "A voice at 52 hertz",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "For years, sonar arrays tracked its song across the ocean, always alone, never joined. No one knows if it is deaf, a rare hybrid, or simply one of a kind. It has never once been seen.",
+      "image_prompt": "a glowing green sonar screen showing a single moving blip in a dark control room, technical, moody, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "Tracked but never seen",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "Maybe it truly is alone, or maybe others hear it and we simply cannot. Either way, somewhere out there tonight, a single voice is still singing into the dark.",
+      "image_prompt": "moonlit ocean surface stretching to the horizon at night with a faint ripple below, haunting, serene, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Still singing",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-20T10:34:57.789953+00:00",
+      "ended_at": "2026-10-20T10:35:18.186577+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-20T10:35:18.187207+00:00",
+      "ended_at": "2026-10-20T10:35:38.236926+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-20T10:35:38.237568+00:00",
+      "ended_at": "2026-10-20T10:35:58.288882+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/a%20glowing%20green%20sonar%20screen%20showing%20a%20single%20moving%20blip%20in%20a%20dark%20control%20room%2C%20technical%2C%20moody%2C%20cinematic?width=1920&height=1080&nologo=true&model=flux&seed=1002'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-20T10:35:58.289532+00:00",
+      "ended_at": "2026-10-20T10:36:08.789533+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
