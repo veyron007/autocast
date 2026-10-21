@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-21",
+  "schema_version": 1,
+  "created_at": "2026-10-21T10:46:56.855804+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Ancient Seeds That Grew After 2,000 Years",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "High on a desert cliff in Israel, archaeologists sifting through an ancient fortress found a handful of date palm seeds, buried and forgotten for two thousand years. By every rule of biology, they should have been long dead. Decades later, a researcher decided to try the impossible and simply planted them. She soaked the shriveled seeds, gave them water and warmth, and waited for something everyone expected would never come. Then, against two thousand years of odds, a single green shoot pushed up through the soil. The ancient seed had awakened, and they named the little palm Methuselah, after the oldest man in legend. Today that palm stands tall, grown from a seed older than most of recorded history. It is living proof that life can wait, patient and dormant, for millennia, ready to begin again.",
+    "word_count": 136,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "High on a desert cliff in Israel, archaeologists sifting through an ancient fortress found a handful of date palm seeds, buried and forgotten for two thousand years. By every rule of biology, they should have been long dead.",
+      "image_prompt": "sun-scorched desert fortress ruins on a high cliff above a pale valley, golden light, archaeological dig, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "Seeds from a lost fortress",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Decades later, a researcher decided to try the impossible and simply planted them. She soaked the shriveled seeds, gave them water and warmth, and waited for something everyone expected would never come.",
+      "image_prompt": "extreme close up of three ancient shriveled date seeds resting in dark soil under warm light, high detail, hopeful, cinematic macro",
+      "duration_s": 6.5,
+      "motion": "pan_right",
+      "caption": "Planting the impossible",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "Then, against two thousand years of odds, a single green shoot pushed up through the soil. The ancient seed had awakened, and they named the little palm Methuselah, after the oldest man in legend.",
+      "image_prompt": "a tiny green palm sprout emerging from dark earth in a shaft of warm sunlight, tender new leaves, luminous, cinematic close up",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "It woke up",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "Today that palm stands tall, grown from a seed older than most of recorded history. It is living proof that life can wait, patient and dormant, for millennia, ready to begin again.",
+      "image_prompt": "a tall healthy date palm standing alone against a vast desert sky at golden hour, majestic, warm, cinematic wide shot",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Life can wait",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-21T10:46:56.856196+00:00",
+      "ended_at": "2026-10-21T10:47:17.268229+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-21T10:47:17.268938+00:00",
+      "ended_at": "2026-10-21T10:47:18.118934+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-21T10:47:18.119613+00:00",
+      "ended_at": "2026-10-21T10:47:38.167630+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/a%20tiny%20green%20palm%20sprout%20emerging%20from%20dark%20earth%20in%20a%20shaft%20of%20warm%20sunlight%2C%20tender%20new%20leaves%2C%20luminous%2C%20cinematic%20close%20up?width=1920&height=1080&nologo=true&model=flux&seed=1002'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-21T10:47:38.168392+00:00",
+      "ended_at": "2026-10-21T10:47:47.711062+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
