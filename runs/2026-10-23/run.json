@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-23",
+  "schema_version": 1,
+  "created_at": "2026-10-23T11:15:23.708771+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Volcano That Stole a Summer",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "In 1815, a mountain in Indonesia named Tambora erupted with the most violent blast in recorded history. It hurled so much ash into the sky that the effects would soon be felt on the far side of the world. A veil of fine ash and gas spread high through the atmosphere, circling the globe and dimming the sun itself. Slowly, quietly, it began to cool the entire planet by a fraction of a degree. The next year, 1816, became the year without a summer. Snow fell in June across New England, frost killed crops in Europe, harvests failed, and hunger spread through countries that never felt the eruption at all. Trapped indoors by the endless gloom, a young writer named Mary Shelley began a ghost story that became Frankenstein. A single volcano had chilled the world, starved nations, and quietly reshaped its art.",
+    "word_count": 143,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "In 1815, a mountain in Indonesia named Tambora erupted with the most violent blast in recorded history. It hurled so much ash into the sky that the effects would soon be felt on the far side of the world.",
+      "image_prompt": "colossal volcanic eruption at dusk hurling ash and fire into a darkening sky over a tropical island, apocalyptic, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "1815, Mount Tambora",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "A veil of fine ash and gas spread high through the atmosphere, circling the globe and dimming the sun itself. Slowly, quietly, it began to cool the entire planet by a fraction of a degree.",
+      "image_prompt": "hazy pale sun struggling through a thick veil of high atmospheric ash, muted grey sky, ominous, cinematic",
+      "duration_s": 6.5,
+      "motion": "pan_right",
+      "caption": "A veil over the sun",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "The next year, 1816, became the year without a summer. Snow fell in June across New England, frost killed crops in Europe, harvests failed, and hunger spread through countries that never felt the eruption at all.",
+      "image_prompt": "a failing summer crop field dusted with unseasonable frost under a cold grey sky, bleak, desolate, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "A summer that never came",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "Trapped indoors by the endless gloom, a young writer named Mary Shelley began a ghost story that became Frankenstein. A single volcano had chilled the world, starved nations, and quietly reshaped its art.",
+      "image_prompt": "candlelit writing desk with an open notebook and quill by a rain-streaked window at night, moody, intimate, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "One volcano, a new world",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-23T11:15:23.709046+00:00",
+      "ended_at": "2026-10-23T11:15:29.618363+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-23T11:15:29.618942+00:00",
+      "ended_at": "2026-10-23T11:15:29.958216+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-23T11:15:29.958753+00:00",
+      "ended_at": "2026-10-23T11:15:30.258139+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/colossal%20volcanic%20eruption%20at%20dusk%20hurling%20ash%20and%20fire%20into%20a%20darkening%20sky%20over%20a%20tropical%20island%2C%20apocalyptic%2C%20cinematic%20wide%20shot?width=1920&height=1080&nologo=true&model=flux&seed=1000'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-10-23T11:15:30.258678+00:00",
+      "ended_at": "2026-10-23T11:15:33.266316+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
