@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-10-26",
+  "schema_version": 1,
+  "created_at": "2026-10-26T11:47:40.528967+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Secret Code That Ended a War in Silence",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "In the depths of World War Two, German commanders sent their orders through a machine that scrambled every message into gibberish. They believed the code was unbreakable. They were wrong. The Enigma machine had billions upon billions of settings, and the Germans reset them every single day. Cracking it by hand was hopeless. So a secret team built a machine to fight a machine. In a quiet English manor called Bletchley Park, a mathematician named Alan Turing designed a whirring electromechanical giant, the bombe, that raced through possible settings until the day's code fell open. The intelligence pulled from that broken code, kept utterly secret, is thought to have shortened the war by around two years. A silent victory won not with weapons, but with patience and mathematics.",
+    "word_count": 128,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "In the depths of World War Two, German commanders sent their orders through a machine that scrambled every message into gibberish. They believed the code was unbreakable. They were wrong.",
+      "image_prompt": "vintage 1940s enigma cipher machine with rows of keys and glowing lamps on a dark wooden desk, dramatic side light, high detail, cinematic close up",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "An unbreakable code",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "The Enigma machine had billions upon billions of settings, and the Germans reset them every single day. Cracking it by hand was hopeless. So a secret team built a machine to fight a machine.",
+      "image_prompt": "close up of the intricate rotors and tangled wiring inside an enigma machine, brass contacts glinting, moody amber light, cinematic macro",
+      "duration_s": 7.0,
+      "motion": "pan_right",
+      "caption": "Billions of settings",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "In a quiet English manor called Bletchley Park, a mathematician named Alan Turing designed a whirring electromechanical giant, the bombe, that raced through possible settings until the day's code fell open.",
+      "image_prompt": "1940s codebreaking hall with a large electromechanical bombe machine of spinning drums, figures at desks, dim period lighting, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "A machine to hunt codes",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "The intelligence pulled from that broken code, kept utterly secret, is thought to have shortened the war by around two years. A silent victory won not with weapons, but with patience and mathematics.",
+      "image_prompt": "a single deciphered telegram page under a lone desk lamp in a darkened wartime office, atmospheric, intimate, cinematic still life",
+      "duration_s": 7.0,
+      "motion": "zoom_out",
+      "caption": "Won with mathematics",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-26T11:47:40.529374+00:00",
+      "ended_at": "2026-10-26T11:48:00.898003+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-26T11:48:00.898717+00:00",
+      "ended_at": "2026-10-26T11:48:01.105685+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-10-26T11:48:01.106432+00:00",
+      "ended_at": "2026-10-26T11:48:01.324855+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: ReadTimeout: The read operation timed out",
+      "started_at": "2026-10-26T11:48:01.325512+00:00",
+      "ended_at": "2026-10-26T11:49:07.793142+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
