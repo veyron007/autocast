@@ -1,0 +1,47 @@
+{"ts": "2026-10-28T11:47:47.683781+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== AutoCast run 2026-10-28 (dry_run=False) ==="}
+{"ts": "2026-10-28T11:47:47.684049+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "orchestrator: new run 2026-10-28"}
+{"ts": "2026-10-28T11:47:48.006007+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-28T11:47:48.006203+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[topic-rank]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-28T11:48:08.090574+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-10-28T11:48:08.090823+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-10-28T11:48:08.091005+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-10-28T11:48:08.091165+00:00", "level": "INFO", "logger": "autocast.stages.topic", "msg": "topic: chose 'Why You Cannot Tickle Yourself' (source=google-trends-rss) via template-fallback"}
+{"ts": "2026-10-28T11:48:08.091997+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage topic: completed"}
+{"ts": "2026-10-28T11:48:08.092680+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-28T11:48:08.092754+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[script]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-28T11:48:28.144390+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-10-28T11:48:28.144591+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-10-28T11:48:28.144706+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-10-28T11:48:28.144934+00:00", "level": "INFO", "logger": "autocast.stages.script", "msg": "script: 135 words via template-seed"}
+{"ts": "2026-10-28T11:48:28.145663+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage script: completed"}
+{"ts": "2026-10-28T11:48:28.146278+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-28T11:48:28.146360+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[direction]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-28T11:48:48.199120+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-10-28T11:48:48.199330+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-10-28T11:48:48.199431+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-10-28T11:48:48.199651+00:00", "level": "INFO", "logger": "autocast.stages.direction", "msg": "direction: 4 shots via template-seed"}
+{"ts": "2026-10-28T11:48:48.200598+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage direction: completed"}
+{"ts": "2026-10-28T11:48:48.201329+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-28T11:48:48.777441+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_000.png (24445 bytes)"}
+{"ts": "2026-10-28T11:48:48.777564+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-28T11:48:48.777755+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-28T11:48:54.446416+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_001.png (68198 bytes)"}
+{"ts": "2026-10-28T11:48:54.446538+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-28T11:48:54.446701+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-28T11:49:54.506195+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: GET https://image.pollinations.ai/prompt/abstract%20visualization%20of%20a%20nerve%2 failed (attempt 1/2): The read operation timed out"}
+{"ts": "2026-10-28T11:50:02.419755+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_002.png (45589 bytes)"}
+{"ts": "2026-10-28T11:50:02.419889+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-28T11:50:02.420035+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-28T11:51:02.458215+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: GET https://image.pollinations.ai/prompt/a%20person%27s%20calm%20face%20half%20in%20 failed (attempt 1/2): The read operation timed out"}
+{"ts": "2026-10-28T11:51:09.113179+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_003.png (41219 bytes)"}
+{"ts": "2026-10-28T11:51:09.113276+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-28T11:51:09.113417+00:00", "level": "INFO", "logger": "autocast.stages.images", "msg": "images: rendered 4 images via pollinations-flux"}
+{"ts": "2026-10-28T11:51:09.114201+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage images: completed"}
+{"ts": "2026-10-28T11:51:09.114962+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying kokoro-82m (attempt 1)"}
+{"ts": "2026-10-28T11:51:09.115200+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: kokoro-82m failed: kokoro unavailable: No module named 'numpy'"}
+{"ts": "2026-10-28T11:51:09.115273+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying edge-tts (attempt 1)"}
+{"ts": "2026-10-28T11:51:09.682961+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: edge-tts failed: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=599de5d3cafa4fb6baede873ef56e408&Sec-MS-GEC=FF33D80B54B95A03028A4D7754C34A3D87255C5C2D91EB8B3F4868EAD658D9A2&Sec-MS-GEC-Version=1-143.0.3650.75'"}
+{"ts": "2026-10-28T11:51:09.683152+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying macos-say (attempt 1)"}
+{"ts": "2026-10-28T11:51:09.683240+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: macos-say failed: macOS `say` unavailable on this platform"}
+{"ts": "2026-10-28T11:51:09.684324+00:00", "level": "ERROR", "logger": "autocast.orchestrator", "msg": "stage tts: FAILED -> all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=599de5d3cafa4fb6baede873ef56e408&Sec-MS-GEC=FF33D80B54B95A03028A4D7754C34A3D87255C5C2D91EB8B3F4868EAD658D9A2&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform"}
+{"ts": "2026-10-28T11:51:09.685849+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=failed assets=pending video=pending thumbnail=pending upload=pending ==="}
