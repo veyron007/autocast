@@ -1,0 +1,40 @@
+{"ts": "2026-10-31T11:22:43.022181+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== AutoCast run 2026-10-31 (dry_run=False) ==="}
+{"ts": "2026-10-31T11:22:43.022487+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "orchestrator: new run 2026-10-31"}
+{"ts": "2026-10-31T11:22:43.311820+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-31T11:22:43.311986+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[topic-rank]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-31T11:22:59.496128+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai succeeded"}
+{"ts": "2026-10-31T11:22:59.496454+00:00", "level": "INFO", "logger": "autocast.stages.topic", "msg": "topic: chose \"Megan Fox's Secret: How Lost Roman Concrete Still Saves Skyscrapers\" (source=google-trends-rss) via pollinations-openai"}
+{"ts": "2026-10-31T11:22:59.497128+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage topic: completed"}
+{"ts": "2026-10-31T11:22:59.497683+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-31T11:22:59.497797+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[script]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-31T11:23:19.544400+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-10-31T11:23:19.544622+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-10-31T11:23:19.544837+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-10-31T11:23:19.545065+00:00", "level": "INFO", "logger": "autocast.stages.script", "msg": "script: 55 words via template-fallback"}
+{"ts": "2026-10-31T11:23:19.545769+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage script: completed"}
+{"ts": "2026-10-31T11:23:19.546309+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-10-31T11:23:19.546421+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[direction]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-10-31T11:23:39.593080+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-10-31T11:23:39.593337+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-10-31T11:23:39.593476+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-10-31T11:23:39.593720+00:00", "level": "INFO", "logger": "autocast.stages.direction", "msg": "direction: 3 shots via template-fallback"}
+{"ts": "2026-10-31T11:23:39.594469+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage direction: completed"}
+{"ts": "2026-10-31T11:23:39.595056+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-31T11:23:39.790613+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_000.png (29666 bytes)"}
+{"ts": "2026-10-31T11:23:39.790732+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-31T11:23:39.790926+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-31T11:23:39.995884+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_001.png (73828 bytes)"}
+{"ts": "2026-10-31T11:23:39.995990+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-31T11:23:39.996209+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-10-31T11:23:40.186096+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_002.png (58104 bytes)"}
+{"ts": "2026-10-31T11:23:40.186275+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-10-31T11:23:40.186433+00:00", "level": "INFO", "logger": "autocast.stages.images", "msg": "images: rendered 3 images via pollinations-flux"}
+{"ts": "2026-10-31T11:23:40.187059+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage images: completed"}
+{"ts": "2026-10-31T11:23:40.187685+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying kokoro-82m (attempt 1)"}
+{"ts": "2026-10-31T11:23:40.187918+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: kokoro-82m failed: kokoro unavailable: No module named 'numpy'"}
+{"ts": "2026-10-31T11:23:40.188016+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying edge-tts (attempt 1)"}
+{"ts": "2026-10-31T11:23:40.555549+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: edge-tts failed: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=093e915b8f824440b33183ed717fac42&Sec-MS-GEC=95E3B7321E74AA035D7E7B1F856B90524476B03FCF86C6CB82FEA8FA6E05DE60&Sec-MS-GEC-Version=1-143.0.3650.75'"}
+{"ts": "2026-10-31T11:23:40.555720+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying macos-say (attempt 1)"}
+{"ts": "2026-10-31T11:23:40.555831+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: macos-say failed: macOS `say` unavailable on this platform"}
+{"ts": "2026-10-31T11:23:40.556513+00:00", "level": "ERROR", "logger": "autocast.orchestrator", "msg": "stage tts: FAILED -> all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=093e915b8f824440b33183ed717fac42&Sec-MS-GEC=95E3B7321E74AA035D7E7B1F856B90524476B03FCF86C6CB82FEA8FA6E05DE60&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform"}
+{"ts": "2026-10-31T11:23:40.557716+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=failed assets=pending video=pending thumbnail=pending upload=pending ==="}
