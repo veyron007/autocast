@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-11-02",
+  "schema_version": 1,
+  "created_at": "2026-11-02T14:05:14.790398+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "How Medieval Cities Handled Their Waste",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "Picture a medieval city: fifty thousand people packed inside stone walls, and not a single sewer. The most pressing question wasn't war or plague. It was simply, where does it all go? The answer was a grim economy. Households used cesspits dug beneath their homes. When they filled, the night-soil men, the gong farmers, emptied them by hand after dark and hauled the waste beyond the walls. It was dangerous, low-paid, and constant. When the system failed, waste ran into the same rivers people drank from, and the diseases that followed could empty a city faster than any siege. Every flush you take today traces back to these grim lessons. Modern sanitation was never a sudden invention. It was built, painfully, on centuries of getting it wrong.",
+    "word_count": 127,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "Picture a medieval city: fifty thousand people packed inside stone walls, and not a single sewer. The most pressing question wasn't war or plague. It was simply, where does it all go?",
+      "image_prompt": "crowded medieval european city street at dusk, timber houses leaning overhead, muddy lane, atmospheric haze, cinematic",
+      "duration_s": 7.0,
+      "motion": "pan_right",
+      "caption": "50,000 people, no sewers",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "The answer was a grim economy. Households used cesspits dug beneath their homes. When they filled, the night-soil men, the gong farmers, emptied them by hand after dark and hauled the waste beyond the walls.",
+      "image_prompt": "lantern-lit medieval alley at night, a cloaked figure with a cart and shovel, moody, candlelight, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "The gong farmers",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "It was dangerous, low-paid, and constant. When the system failed, waste ran into the same rivers people drank from, and the diseases that followed could empty a city faster than any siege.",
+      "image_prompt": "murky medieval river running past stone city walls, refuse floating, grey overcast light, grim, cinematic",
+      "duration_s": 6.5,
+      "motion": "pan_left",
+      "caption": "When it failed",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "Every flush you take today traces back to these grim lessons. Modern sanitation was never a sudden invention. It was built, painfully, on centuries of getting it wrong.",
+      "image_prompt": "modern water treatment plant with geometric tanks at blue hour, aerial view, crisp, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "The cost of clean",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-02T14:05:14.790883+00:00",
+      "ended_at": "2026-11-02T14:05:35.358309+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-02T14:05:35.358890+00:00",
+      "ended_at": "2026-11-02T14:05:55.405238+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-02T14:05:55.405962+00:00",
+      "ended_at": "2026-11-02T14:05:55.679411+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/lantern-lit%20medieval%20alley%20at%20night%2C%20a%20cloaked%20figure%20with%20a%20cart%20and%20shovel%2C%20moody%2C%20candlelight%2C%20cinematic?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-11-02T14:05:55.680179+00:00",
+      "ended_at": "2026-11-02T14:06:04.342557+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
