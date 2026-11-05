@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-11-05",
+  "schema_version": 1,
+  "created_at": "2026-11-05T13:40:59.486058+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The Library of Alexandria Didn't Burn in a Day",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "template-fallback"
+  },
+  "script": {
+    "full_text": "You have heard that the great Library of Alexandria burned in a single catastrophic night, taking all the world's knowledge with it. The truth is stranger, and far quieter. There was no single fire. Caesar's troops scorched part of it once, but the real decline was slow: decades of lost funding, expelled scholars, and fragile scrolls crumbling to dust in the damp sea air. Every scroll had to be copied by hand just to survive. When the scholars stopped coming and the copyists laid down their pens, the words did not burn. They were simply never recopied, and faded away. We mourn a single dramatic blaze, but knowledge more often dies of neglect. The lesson of Alexandria is not to fear the fire. It is to fear forgetting to care.",
+    "word_count": 130,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "You have heard that the great Library of Alexandria burned in a single catastrophic night, taking all the world's knowledge with it. The truth is stranger, and far quieter.",
+      "image_prompt": "grand ancient library of alexandria interior, towering shelves of papyrus scrolls, warm torchlight, marble columns, cinematic wide shot",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "The great fire myth",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "There was no single fire. Caesar's troops scorched part of it once, but the real decline was slow: decades of lost funding, expelled scholars, and fragile scrolls crumbling to dust in the damp sea air.",
+      "image_prompt": "decaying papyrus scrolls crumbling on dusty neglected shelves in dim shafts of light, melancholic, high detail, cinematic",
+      "duration_s": 7.0,
+      "motion": "pan_right",
+      "caption": "A slow decline",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "Every scroll had to be copied by hand just to survive. When the scholars stopped coming and the copyists laid down their pens, the words did not burn. They were simply never recopied, and faded away.",
+      "image_prompt": "close up of an ancient scribe's hands copying greek text onto papyrus with a reed pen by candlelight, warm, intimate, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "Copied by hand, or lost",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "We mourn a single dramatic blaze, but knowledge more often dies of neglect. The lesson of Alexandria is not to fear the fire. It is to fear forgetting to care.",
+      "image_prompt": "a single candle burning low beside a fading scroll in surrounding darkness, symbolic, moody, cinematic still life",
+      "duration_s": 6.5,
+      "motion": "zoom_out",
+      "caption": "Neglect, not flame",
+      "image_path": null,
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-05T13:40:59.486364+00:00",
+      "ended_at": "2026-11-05T13:41:19.835965+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-05T13:41:19.836449+00:00",
+      "ended_at": "2026-11-05T13:41:20.155462+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-05T13:41:20.155917+00:00",
+      "ended_at": "2026-11-05T13:41:40.201674+00:00"
+    },
+    {
+      "name": "images",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> pollinations-flux: HTTPStatusError: Client error '402 Payment Required' for url 'https://image.pollinations.ai/prompt/decaying%20papyrus%20scrolls%20crumbling%20on%20dusty%20neglected%20shelves%20in%20dim%20shafts%20of%20light%2C%20melancholic%2C%20high%20detail%2C%20cinematic?width=1920&height=1080&nologo=true&model=flux&seed=1001'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402",
+      "started_at": "2026-11-05T13:41:40.202158+00:00",
+      "ended_at": "2026-11-05T13:41:47.551167+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
