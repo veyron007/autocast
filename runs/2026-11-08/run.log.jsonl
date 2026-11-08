@@ -1,0 +1,47 @@
+{"ts": "2026-11-08T12:23:15.038050+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== AutoCast run 2026-11-08 (dry_run=False) ==="}
+{"ts": "2026-11-08T12:23:15.038298+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "orchestrator: new run 2026-11-08"}
+{"ts": "2026-11-08T12:23:15.564171+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-08T12:23:15.564345+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[topic-rank]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-08T12:23:35.639786+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): The read operation timed out"}
+{"ts": "2026-11-08T12:23:35.640041+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: The read operation timed out"}
+{"ts": "2026-11-08T12:23:35.640228+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: ReadTimeout: The read operation timed out); caller falls back to template"}
+{"ts": "2026-11-08T12:23:35.640420+00:00", "level": "INFO", "logger": "autocast.stages.topic", "msg": "topic: chose 'The Explosion That Flattened a Siberian Forest' (source=google-trends-rss) via template-fallback"}
+{"ts": "2026-11-08T12:23:35.641084+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage topic: completed"}
+{"ts": "2026-11-08T12:23:35.641633+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-08T12:23:35.641741+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[script]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-08T12:23:35.859990+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-08T12:23:35.860183+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-08T12:23:35.860326+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: HTTPStatusError: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402); caller falls back to template"}
+{"ts": "2026-11-08T12:23:35.860514+00:00", "level": "INFO", "logger": "autocast.stages.script", "msg": "script: 133 words via template-seed"}
+{"ts": "2026-11-08T12:23:35.861101+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage script: completed"}
+{"ts": "2026-11-08T12:23:35.861568+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-08T12:23:35.861666+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[direction]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-08T12:23:36.065864+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-08T12:23:36.066063+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-08T12:23:36.066189+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: HTTPStatusError: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402); caller falls back to template"}
+{"ts": "2026-11-08T12:23:36.066390+00:00", "level": "INFO", "logger": "autocast.stages.direction", "msg": "direction: 4 shots via template-seed"}
+{"ts": "2026-11-08T12:23:36.067110+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage direction: completed"}
+{"ts": "2026-11-08T12:23:36.067681+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-08T12:23:36.474173+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_000.png (47743 bytes)"}
+{"ts": "2026-11-08T12:23:36.474322+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-08T12:23:36.474508+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-08T12:23:42.665665+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_001.png (96453 bytes)"}
+{"ts": "2026-11-08T12:23:42.665819+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-08T12:23:42.666026+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-08T12:24:42.758201+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: GET https://image.pollinations.ai/prompt/a%20brilliant%20meteor%20exploding%20in%20a failed (attempt 1/2): The read operation timed out"}
+{"ts": "2026-11-08T12:24:50.383666+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_002.png (53886 bytes)"}
+{"ts": "2026-11-08T12:24:50.383818+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-08T12:24:50.384016+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-08T12:25:50.470398+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: GET https://image.pollinations.ai/prompt/peaceful%20starry%20night%20sky%20over%20a% failed (attempt 1/2): The read operation timed out"}
+{"ts": "2026-11-08T12:25:57.141016+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_003.png (88195 bytes)"}
+{"ts": "2026-11-08T12:25:57.141150+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-08T12:25:57.141302+00:00", "level": "INFO", "logger": "autocast.stages.images", "msg": "images: rendered 4 images via pollinations-flux"}
+{"ts": "2026-11-08T12:25:57.142019+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage images: completed"}
+{"ts": "2026-11-08T12:25:57.142613+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying kokoro-82m (attempt 1)"}
+{"ts": "2026-11-08T12:25:57.142852+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: kokoro-82m failed: kokoro unavailable: No module named 'numpy'"}
+{"ts": "2026-11-08T12:25:57.142986+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying edge-tts (attempt 1)"}
+{"ts": "2026-11-08T12:25:57.734120+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: edge-tts failed: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=7d36cfe218b74eb7af15b931d7b4bfe9&Sec-MS-GEC=17476393EF55CA828B5EDDC000A7534CCD2868B98DF02C50CD5AA8EEC51203E7&Sec-MS-GEC-Version=1-143.0.3650.75'"}
+{"ts": "2026-11-08T12:25:57.734315+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying macos-say (attempt 1)"}
+{"ts": "2026-11-08T12:25:57.734421+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: macos-say failed: macOS `say` unavailable on this platform"}
+{"ts": "2026-11-08T12:25:57.735112+00:00", "level": "ERROR", "logger": "autocast.orchestrator", "msg": "stage tts: FAILED -> all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=7d36cfe218b74eb7af15b931d7b4bfe9&Sec-MS-GEC=17476393EF55CA828B5EDDC000A7534CCD2868B98DF02C50CD5AA8EEC51203E7&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform"}
+{"ts": "2026-11-08T12:25:57.736368+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=failed assets=pending video=pending thumbnail=pending upload=pending ==="}
