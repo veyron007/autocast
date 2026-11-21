@@ -1,0 +1,159 @@
+{
+  "run_id": "2026-11-21",
+  "schema_version": 1,
+  "created_at": "2026-11-21T13:51:39.235136+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "The 2,000-Year-Old Computer Found in a Shipwreck",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "pollinations-openai"
+  },
+  "script": {
+    "full_text": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer. Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It was a hand-cranked machine, built by ancient Greeks to model the motion of the heavens themselves. Turn its crank and it tracked the sun and moon, predicted their phases, even forecast eclipses years in advance. Nothing this intricate would appear again anywhere for over a thousand years. We assume our ancestors were simpler than us. But someone, twenty centuries ago, held the whole sky inside a box of gears. And then that knowledge vanished into the sea.",
+    "word_count": 123,
+    "provider": "template-seed"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "In 1901, sponge divers off a Greek island hauled a lump of corroded bronze up from an ancient wreck. It would take a full century to realize they had found a two-thousand-year-old computer.",
+      "image_prompt": "corroded bronze gear fragment encrusted with sea deposits on a dark surface, mysterious, museum lighting, cinematic close up",
+      "duration_s": 7.0,
+      "motion": "zoom_in",
+      "caption": "A lump of bronze",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Hidden inside were dozens of interlocking bronze gears, cut with astonishing precision. It was a hand-cranked machine, built by ancient Greeks to model the motion of the heavens themselves.",
+      "image_prompt": "intricate interlocking ancient bronze gears in extreme detail, glowing golden light, mechanical, cinematic macro",
+      "duration_s": 6.5,
+      "motion": "pan_left",
+      "caption": "Dozens of gears",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "Turn its crank and it tracked the sun and moon, predicted their phases, even forecast eclipses years in advance. Nothing this intricate would appear again anywhere for over a thousand years.",
+      "image_prompt": "reconstruction of the antikythera mechanism with rotating dials and pointers, glowing bronze, dramatic, cinematic",
+      "duration_s": 6.5,
+      "motion": "zoom_in",
+      "caption": "It predicted eclipses",
+      "image_path": "assets/shot_002.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 3,
+      "narration": "We assume our ancestors were simpler than us. But someone, twenty centuries ago, held the whole sky inside a box of gears. And then that knowledge vanished into the sea.",
+      "image_prompt": "an ancient bronze mechanism sinking slowly through deep blue seawater pierced by shafts of light, haunting, cinematic",
+      "duration_s": 7.0,
+      "motion": "zoom_out",
+      "caption": "The sky in a box",
+      "image_path": "assets/shot_003.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-21T13:51:39.235365+00:00",
+      "ended_at": "2026-11-21T13:51:44.469258+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-21T13:51:44.469720+00:00",
+      "ended_at": "2026-11-21T13:51:44.747283+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-seed",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-21T13:51:44.747783+00:00",
+      "ended_at": "2026-11-21T13:51:45.015784+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-21T13:51:45.016288+00:00",
+      "ended_at": "2026-11-21T13:51:47.201729+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=1599e41af0824d54b3c7754021675146&Sec-MS-GEC=97B1E4BED6637342BCD4C55D7C30EF712C63072BB6EEBCCACD69A9D0A08926CE&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform",
+      "started_at": "2026-11-21T13:51:47.202284+00:00",
+      "ended_at": "2026-11-21T13:51:48.143048+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}

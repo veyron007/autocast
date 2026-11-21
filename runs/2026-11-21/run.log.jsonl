@@ -1,0 +1,43 @@
+{"ts": "2026-11-21T13:51:39.234837+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== AutoCast run 2026-11-21 (dry_run=False) ==="}
+{"ts": "2026-11-21T13:51:39.235050+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "orchestrator: new run 2026-11-21"}
+{"ts": "2026-11-21T13:51:39.480750+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-21T13:51:39.480935+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[topic-rank]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-21T13:51:44.468927+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai succeeded"}
+{"ts": "2026-11-21T13:51:44.469203+00:00", "level": "INFO", "logger": "autocast.stages.topic", "msg": "topic: chose 'The 2,000-Year-Old Computer Found in a Shipwreck' (source=google-trends-rss) via pollinations-openai"}
+{"ts": "2026-11-21T13:51:44.469659+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage topic: completed"}
+{"ts": "2026-11-21T13:51:44.472094+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-21T13:51:44.472187+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[script]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-21T13:51:44.746725+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-21T13:51:44.746913+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-21T13:51:44.747061+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: HTTPStatusError: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402); caller falls back to template"}
+{"ts": "2026-11-21T13:51:44.747224+00:00", "level": "INFO", "logger": "autocast.stages.script", "msg": "script: 123 words via template-seed"}
+{"ts": "2026-11-21T13:51:44.747724+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage script: completed"}
+{"ts": "2026-11-21T13:51:44.748104+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-openai (attempt 1)"}
+{"ts": "2026-11-21T13:51:44.748183+00:00", "level": "INFO", "logger": "autocast.providers.llm", "msg": "llm[direction]: calling pollinations-openai (keyless, POST)"}
+{"ts": "2026-11-21T13:51:45.015288+00:00", "level": "WARNING", "logger": "autocast.net", "msg": "net: POST https://text.pollinations.ai/openai failed (attempt 1/1): Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-21T13:51:45.015483+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: pollinations-openai failed: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402"}
+{"ts": "2026-11-21T13:51:45.015566+00:00", "level": "WARNING", "logger": "autocast.providers.llm", "msg": "llm: all providers failed (all providers failed -> pollinations-openai: HTTPStatusError: Client error '402 Payment Required' for url 'https://text.pollinations.ai/openai'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402); caller falls back to template"}
+{"ts": "2026-11-21T13:51:45.015723+00:00", "level": "INFO", "logger": "autocast.stages.direction", "msg": "direction: 4 shots via template-seed"}
+{"ts": "2026-11-21T13:51:45.016232+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage direction: completed"}
+{"ts": "2026-11-21T13:51:45.016656+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-21T13:51:45.682121+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_000.png (77978 bytes)"}
+{"ts": "2026-11-21T13:51:45.682240+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-21T13:51:45.682389+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-21T13:51:46.182491+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_001.png (58582 bytes)"}
+{"ts": "2026-11-21T13:51:46.182612+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-21T13:51:46.182731+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-21T13:51:46.767371+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_002.png (67488 bytes)"}
+{"ts": "2026-11-21T13:51:46.767484+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-21T13:51:46.767603+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying pollinations-flux (attempt 1)"}
+{"ts": "2026-11-21T13:51:47.201462+00:00", "level": "INFO", "logger": "autocast.providers.image", "msg": "image: pollinations wrote shot_003.png (67973 bytes)"}
+{"ts": "2026-11-21T13:51:47.201564+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: pollinations-flux succeeded"}
+{"ts": "2026-11-21T13:51:47.201681+00:00", "level": "INFO", "logger": "autocast.stages.images", "msg": "images: rendered 4 images via pollinations-flux"}
+{"ts": "2026-11-21T13:51:47.202218+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "stage images: completed"}
+{"ts": "2026-11-21T13:51:47.456990+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying kokoro-82m (attempt 1)"}
+{"ts": "2026-11-21T13:51:47.457229+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: kokoro-82m failed: kokoro unavailable: No module named 'numpy'"}
+{"ts": "2026-11-21T13:51:47.457300+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying edge-tts (attempt 1)"}
+{"ts": "2026-11-21T13:51:48.142720+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: edge-tts failed: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=1599e41af0824d54b3c7754021675146&Sec-MS-GEC=97B1E4BED6637342BCD4C55D7C30EF712C63072BB6EEBCCACD69A9D0A08926CE&Sec-MS-GEC-Version=1-143.0.3650.75'"}
+{"ts": "2026-11-21T13:51:48.142866+00:00", "level": "INFO", "logger": "autocast.cascade", "msg": "cascade: trying macos-say (attempt 1)"}
+{"ts": "2026-11-21T13:51:48.142939+00:00", "level": "WARNING", "logger": "autocast.cascade", "msg": "cascade: macos-say failed: macOS `say` unavailable on this platform"}
+{"ts": "2026-11-21T13:51:48.143572+00:00", "level": "ERROR", "logger": "autocast.orchestrator", "msg": "stage tts: FAILED -> all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=1599e41af0824d54b3c7754021675146&Sec-MS-GEC=97B1E4BED6637342BCD4C55D7C30EF712C63072BB6EEBCCACD69A9D0A08926CE&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform"}
+{"ts": "2026-11-21T13:51:48.144468+00:00", "level": "INFO", "logger": "autocast.orchestrator", "msg": "=== done: topic=completed script=completed direction=completed images=completed tts=failed assets=pending video=pending thumbnail=pending upload=pending ==="}
