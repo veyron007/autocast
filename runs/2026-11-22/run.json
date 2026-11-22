@@ -1,0 +1,147 @@
+{
+  "run_id": "2026-11-22",
+  "schema_version": 1,
+  "created_at": "2026-11-22T13:44:34.010914+00:00",
+  "config_snapshot": {
+    "voice": "af_heart",
+    "aspect": "1920x1080",
+    "target_len_s": 90
+  },
+  "topic": {
+    "title": "How Medieval Cities Handled Their Waste — The Surprising Solution",
+    "source": "google-trends-rss",
+    "rank_score": 0.8,
+    "provider": "pollinations-openai"
+  },
+  "script": {
+    "full_text": "How Medieval Cities Handled Their Waste — The Surprising Solution. Some stories hide in plain sight, waiting for someone to finally look a little closer. Trace it back to the very beginning, and a familiar thing starts to look strange and new. By the end, you will never quite see it the same way again.",
+    "word_count": 55,
+    "provider": "template-fallback"
+  },
+  "shots": [
+    {
+      "idx": 0,
+      "narration": "How Medieval Cities Handled Their Waste — The Surprising Solution. Some stories hide in plain sight, waiting for someone to finally look a little closer.",
+      "image_prompt": "atmospheric wide establishing shot at soft golden light, film grain, cinematic, moody",
+      "duration_s": 5.5,
+      "motion": "zoom_in",
+      "caption": "A closer look",
+      "image_path": "assets/shot_000.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 1,
+      "narration": "Trace it back to the very beginning, and a familiar thing starts to look strange and new.",
+      "image_prompt": "extreme close up of an aged, textured surface, moody, high detail, cinematic",
+      "duration_s": 5.5,
+      "motion": "pan_right",
+      "caption": "Back to the start",
+      "image_path": "assets/shot_001.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    },
+    {
+      "idx": 2,
+      "narration": "By the end, you will never quite see it the same way again.",
+      "image_prompt": "slow reveal of a wide landscape at golden hour, hopeful, cinematic, expansive",
+      "duration_s": 5.5,
+      "motion": "zoom_out",
+      "caption": "See it anew",
+      "image_path": "assets/shot_002.png",
+      "clip_path": null,
+      "audio_start_s": null,
+      "audio_end_s": null
+    }
+  ],
+  "audio": null,
+  "assets": null,
+  "video": null,
+  "thumbnail": null,
+  "upload": null,
+  "stages": [
+    {
+      "name": "topic",
+      "status": "completed",
+      "provider_used": "pollinations-openai",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-22T13:44:34.011247+00:00",
+      "ended_at": "2026-11-22T13:44:41.065026+00:00"
+    },
+    {
+      "name": "script",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-22T13:44:41.065541+00:00",
+      "ended_at": "2026-11-22T13:44:41.325905+00:00"
+    },
+    {
+      "name": "direction",
+      "status": "completed",
+      "provider_used": "template-fallback",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-22T13:44:41.326453+00:00",
+      "ended_at": "2026-11-22T13:44:41.559621+00:00"
+    },
+    {
+      "name": "images",
+      "status": "completed",
+      "provider_used": "pollinations-flux",
+      "attempts": 1,
+      "error": null,
+      "started_at": "2026-11-22T13:44:41.567932+00:00",
+      "ended_at": "2026-11-22T13:44:43.397250+00:00"
+    },
+    {
+      "name": "tts",
+      "status": "failed",
+      "provider_used": null,
+      "attempts": 1,
+      "error": "AllProvidersFailed: all providers failed -> kokoro-82m: RuntimeError: kokoro unavailable: No module named 'numpy'; edge-tts: WSServerHandshakeError: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=bc8b54348b4d4f74bf1d1f2d90827f8b&Sec-MS-GEC=F78CE858A3FCC81FE9658D1521770511C961D89236432100D945490D8B33B5D7&Sec-MS-GEC-Version=1-143.0.3650.75'; macos-say: RuntimeError: macOS `say` unavailable on this platform",
+      "started_at": "2026-11-22T13:44:43.397886+00:00",
+      "ended_at": "2026-11-22T13:44:44.233021+00:00"
+    },
+    {
+      "name": "assets",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "video",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "thumbnail",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    },
+    {
+      "name": "upload",
+      "status": "pending",
+      "provider_used": null,
+      "attempts": 0,
+      "error": null,
+      "started_at": null,
+      "ended_at": null
+    }
+  ]
+}
